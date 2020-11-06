@@ -3,7 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
+import PetsIcon from '@material-ui/icons/Pets';
 import PropTypes from 'prop-types';
 import useStyles from './Navbar.styles';
 
@@ -20,7 +21,7 @@ const Navbar = ({ props }) => {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            <PetsIcon />
           </IconButton>
           <Typography variant="h6" color="inherit">
             Puppy Health App
