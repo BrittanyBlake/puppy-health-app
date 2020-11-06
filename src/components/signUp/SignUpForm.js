@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
-import useStyles from './LoginForm.styles';
+import useStyles from './SignUpForm.styles';
 
 function Copyright() {
   return (
@@ -26,7 +26,7 @@ function Copyright() {
   );
 }
 
-const LoginForm = ({ props }) => {
+const SignUpForm = ({ props }) => {
   const classes = useStyles(props);
 
   return (
@@ -48,10 +48,20 @@ const LoginForm = ({ props }) => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" style={{ color: '#ffffff' }}>
-            Welcome! Log In to get started
+            New here? Make an account to get started!
           </Typography>
 
           <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Pup's Name"
+              name="name"
+              autoFocus
+            />
             <TextField
               variant="outlined"
               margin="normal"
@@ -74,6 +84,17 @@ const LoginForm = ({ props }) => {
               id="password"
               autoComplete="current-password"
             />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Confirm Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
             <Button
               type="submit"
               fullWidth
@@ -81,16 +102,11 @@ const LoginForm = ({ props }) => {
               style={{ backgroundColor: '#97E493' }}
               className={classes.submit}
             >
-              Sign In
+              Sign Up
             </Button>
-            <Grid item xs>
-              <Link href="#/" variant="body2" style={{ color: '#ffffff' }}>
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
               <Link href="#/" variant="body2" style={{ color: '#ffffff' }}>
-                No account? Sign Up
+                Already have an account? Sign In
               </Link>
             </Grid>
 
@@ -103,11 +119,11 @@ const LoginForm = ({ props }) => {
     </Grid>
   );
 };
-LoginForm.propTypes = {
+SignUpForm.propTypes = {
   props: PropTypes.func,
 };
 
-LoginForm.defaultProps = {
+SignUpForm.defaultProps = {
   props: () => {},
 };
-export default LoginForm;
+export default SignUpForm;
