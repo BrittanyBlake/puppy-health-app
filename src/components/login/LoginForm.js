@@ -10,21 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import Copyright from '../copyright/Copyright';
 import useStyles from './LoginForm.styles';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" style={{ color: '#ffffff' }} align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Puppy Health Tracker
-      </Link>
-      {' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const LoginForm = ({ props }) => {
   const classes = useStyles(props);
