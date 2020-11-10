@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
-
+// import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,15 +12,14 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import userPostFetch from '../../redux/actions/index';
 import Copyright from '../copyright/Copyright';
 import useStyles from './SignUpForm.styles';
-import userPostFetch from '../../redux/actions/index';
-import PuppyHealthApi from "../../api/healthTracker";
 
 const SignUpForm = ({ props }) => {
   const classes = useStyles(props);
   const dispatch = useDispatch();
-  let history = useHistory();
+  // const history = useHistory();
 
   const initialFormState = {
     name: '',
@@ -39,12 +37,9 @@ const SignUpForm = ({ props }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    HealthApi.signUpUser(values).then((data) => {
-      localStorage.setItem("token", data.token);
-      dispatch(loginUser(data.values));
-      history.push("/login");
-    });
- 
+    dispatch(userPostFetch(values));
+    console.log('sign up');
+    setValues(initialFormState);
   };
 
   return (
@@ -116,10 +111,9 @@ const SignUpForm = ({ props }) => {
               name="password_confirmation"
               label="Confirm Password"
               onChange={handleChange}
-              value={values.password}
+              value={values.password_confirmation}
               type="password"
               id="password_confirmation"
-              autoComplete="current-password"
             />
             <Button
               type="submit"

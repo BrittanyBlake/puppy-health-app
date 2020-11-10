@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,10 +12,30 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Copyright from '../copyright/Copyright';
+import { userLoginFetch } from '../../redux/actions/index';
 import useStyles from './LoginForm.styles';
 
 const LoginForm = ({ props }) => {
   const classes = useStyles(props);
+  const dispatch = useDispatch();
+  const initialFormState = {
+    email: '',
+    password: '',
+  };
+
+  const [values, setValues] = useState(initialFormState);
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(userLoginFetch(values));
+    console.log('hi');
+    setValues(initialFormState);
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -38,13 +59,15 @@ const LoginForm = ({ props }) => {
             Welcome! Log In to get started
           </Typography>
 
-          <form className={classes.form} noValidate>
+          <form className={classes.form} onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
               id="email"
+              onChange={handleChange}
+              value={values.email}
               label="Email Address"
               name="email"
               autoComplete="email"
@@ -55,6 +78,8 @@ const LoginForm = ({ props }) => {
               margin="normal"
               required
               fullWidth
+              onChange={handleChange}
+              value={values.password}
               name="password"
               label="Password"
               type="password"
