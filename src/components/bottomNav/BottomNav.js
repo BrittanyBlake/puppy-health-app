@@ -56,7 +56,7 @@ const BottomNavbar = ({ props, addLink }) => {
 
 BottomNavbar.propTypes = {
   props: PropTypes.func,
-  addLink: PropTypes.string.isRequired,
+  addLink: PropTypes.string,
 };
 
 BottomNavbar.defaultProps = {
