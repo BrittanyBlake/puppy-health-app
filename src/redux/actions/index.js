@@ -5,6 +5,11 @@ export const loginUser = userObj => ({
   payload: userObj,
 });
 
+export const logoutUser = () => ({
+  type: 'LOGOUT_USER',
+
+});
+
 export const formErrors = errors => ({
   type: 'GET_ERRORS',
   payload: errors,
