@@ -52,10 +52,29 @@ const PuppyHealthApi = (() => {
     }
   };
 
+  const getGeneralHealths = () => async dispatch => {
+    const token = localStorage.getItem('token');
+    try {
+      const data = await axios.get(
+        'http://localhost:3000/api/v1/general_healths',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      dispatch(reducerAction.getGeneralHealths(data.data));
+      console.log(data.data);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
   return {
     signUpUser,
     loginUser,
     getFoods,
+    getGeneralHealths,
   };
 })();
 
