@@ -25,6 +25,11 @@ export const getGeneralHealths = generalHealth => ({
   payload: generalHealth,
 });
 
+export const getMedications = medication => ({
+  type: 'GET_MEDICATIONS',
+  payload: medication,
+});
+
 // const userPostFetch = user => dispatch => fetch('http://localhost:3000/signup', {
 //   method: 'POST',
 //   headers: {
