@@ -5,7 +5,7 @@ import getFoodReducer from './getFoodReducer';
 import getGeneralHealthsReducer from './getGeneralHealthsReducer';
 import getMedicationsReducer from './getMedicationReducer';
 import getTreatsReducer from './getTreatReducer';
-import getWalksReducer from './getWalkReducer';
+import WalksReducer from './WalksReducer';
 
 const RootReducer = combineReducers({
   currentUser: userReducer,
@@ -14,7 +14,7 @@ const RootReducer = combineReducers({
   generalHealths: getGeneralHealthsReducer,
   medications: getMedicationsReducer,
   treats: getTreatsReducer,
-  walks: getWalksReducer,
+  walks: WalksReducer,
 
 });
 
