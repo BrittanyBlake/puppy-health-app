@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,12 +12,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Copyright from '../copyright/Copyright';
-import { userLoginFetch } from '../../redux/actions/index';
+// import { userLoginFetch } from '../../redux/actions/index';
+import PuppyHealthApi from '../../api/healthTracker';
 import useStyles from './LoginForm.styles';
 
 const LoginForm = ({ props }) => {
   const classes = useStyles(props);
   const dispatch = useDispatch();
+  const error = useSelector(state => state.errors);
+
   const initialFormState = {
     email: '',
     password: '',
@@ -32,10 +35,16 @@ const LoginForm = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(userLoginFetch(values));
-    console.log('hi');
-    setValues(initialFormState);
+    dispatch(PuppyHealthApi.loginUser(values));
+    if (error) {
+      return error;
+    }
+    return true;
   };
+
+  if (!error) {
+    return null;
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
