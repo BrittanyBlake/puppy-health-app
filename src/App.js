@@ -11,6 +11,7 @@ import Treats from './components/treats/Treats';
 import Medication from './components/medication/Medication';
 import Food from './components/food/Food';
 import General from './components/general/General';
+import AddWalks from './components/walks/addWalks';
 // import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -37,7 +38,11 @@ function App() {
         <Route exact path="/food" component={Food}>
           {currentUser ? <Food /> : <LoginForm />}
         </Route>
+        <Route exact path="/addwalk" component={AddWalks}>
+          {currentUser ? <AddWalks /> : <LoginForm />}
+        </Route>
         <Route exact path="/login" component={LoginForm} />
+
       </Switch>
     </div>
   );

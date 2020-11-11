@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
+// import { addWalks } from '../../redux/actions';
 
 const Walks = () => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const Walks = () => {
             </p>
           </div>
         ))}
-        <BottomNav />
+        <BottomNav props="/addwalk" />
       </div>
     )
   );
