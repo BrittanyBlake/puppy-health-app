@@ -30,7 +30,23 @@ const PuppyHealthApi = (() => {
       });
       localStorage.setItem('token', data.data.auth_token);
       dispatch(reducerAction.loginUser(data.user));
-      window.location = '/homepage';
+      window.location = '/profile';
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
+  const getFoods = () => async dispatch => {
+    const token = localStorage.getItem('token');
+    try {
+      const data = await axios.get('http://localhost:3000/api/v1/foods',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      dispatch(reducerAction.getFoods(data.data));
+      console.log(data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -39,6 +55,7 @@ const PuppyHealthApi = (() => {
   return {
     signUpUser,
     loginUser,
+    getFoods,
   };
 })();
 

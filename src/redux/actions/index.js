@@ -15,6 +15,11 @@ export const formErrors = errors => ({
   payload: errors,
 });
 
+export const getFoods = food => ({
+  type: 'GET_FOODS',
+  payload: food,
+});
+
 // const userPostFetch = user => dispatch => fetch('http://localhost:3000/signup', {
 //   method: 'POST',
 //   headers: {
