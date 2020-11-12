@@ -44,12 +44,14 @@ const BottomNavbar = ({ props, addLink }) => {
         icon={<PieChartIcon />}
         style={{ color: 'white' }}
       />
-      <BottomNavigationAction
-        label="more"
-        value="more"
-        icon={<MoreHorizIcon />}
-        style={{ color: 'white' }}
-      />
+      <Link to="/">
+        <BottomNavigationAction
+          label="more"
+          value="more"
+          icon={<MoreHorizIcon />}
+          style={{ color: 'white' }}
+        />
+      </Link>
     </BottomNavigation>
   );
 };
