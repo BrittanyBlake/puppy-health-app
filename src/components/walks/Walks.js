@@ -46,7 +46,7 @@ const Walks = () => {
             </p>
           </div>
         ))}
-        <BottomNav props="/addwalk" />
+        <BottomNav addLink="/addwalk" />
       </div>
     )
   );
