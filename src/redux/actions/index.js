@@ -20,8 +20,8 @@ export const getFoods = food => ({
   payload: food,
 });
 
-export const addFoods = (food) => ({
-  type: "ADD_FOODS",
+export const addFoods = food => ({
+  type: 'ADD_FOODS',
   payload: food,
 });
 

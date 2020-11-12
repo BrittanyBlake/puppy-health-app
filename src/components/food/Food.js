@@ -24,36 +24,36 @@ const Food = () => {
 
   return (
     console.log('foods', allFoods),
+    (
       <div>
         <Navbar />
         <h1> FOOD PAGE</h1>
         <div>
           {' '}
-          {
-        allFoods.map(food => (
-          <div key={food.id}>
-            <p>
-              Brand:
-              {food.brand}
-            </p>
-            <p>
-              Amount:
-              {food.amount}
-            </p>
-            <p>
-              time:
-              {food.time}
-            </p>
-            <p>
-              date:
-              {food.date}
-            </p>
-          </div>
-        ))
-        }
+          {allFoods.map(food => (
+            <div key={food.id}>
+              <p>
+                Brand:
+                {food.brand}
+              </p>
+              <p>
+                Amount:
+                {food.amount}
+              </p>
+              <p>
+                time:
+                {food.time}
+              </p>
+              <p>
+                date:
+                {food.date}
+              </p>
+            </div>
+          ))}
         </div>
-        <BottomNav />
+        <BottomNav addLink="/addfood" />
       </div>
+    )
   );
 };
 // Food.propTypes = {

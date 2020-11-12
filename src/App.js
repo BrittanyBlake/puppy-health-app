@@ -15,7 +15,7 @@ import AddWalks from './components/walks/addWalks';
 import AddTreats from './components/treats/addTreats';
 import AddMedications from './components/medication/AddMedications';
 import AddGeneralHealths from './components/general/AddGeneralHealths';
-import AddFood from './components/food/AddFood';
+import AddFoods from './components/food/AddFoods';
 // import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -54,8 +54,8 @@ function App() {
         <Route exact path="/addgeneralhealth" component={AddGeneralHealths}>
           {currentUser ? <AddGeneralHealths /> : <LoginForm />}
         </Route>
-        <Route exact path="/addfood" component={AddFood}>
-          {currentUser ? <AddFood /> : <LoginForm />}
+        <Route exact path="/addfood" component={AddFoods}>
+          {currentUser ? <AddFoods /> : <LoginForm />}
         </Route>
         <Route exact path="/login" component={LoginForm} />
 

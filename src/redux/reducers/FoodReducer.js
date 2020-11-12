@@ -1,8 +1,8 @@
 const FoodReducer = (state = [], action) => {
   switch (action.type) {
-    case "GET_FOODS":
+    case 'GET_FOODS':
       return action.payload;
-    case "ADD_FOODS":
+    case 'ADD_FOODS':
       return {
         ...state,
         food: action.payload,
