@@ -53,7 +53,7 @@ const Medication = () => {
             </p>
           </div>
         ))}
-        <BottomNav />
+        <BottomNav addLink="/addmedication" />
       </div>
     )
   );
