@@ -35,6 +35,11 @@ export const getTreats = treat => ({
   payload: treat,
 });
 
+export const addTreats = treat => ({
+  type: 'ADD_TREATS',
+  payload: treat,
+});
+
 export const getWalks = walk => ({
   type: 'GET_WALKS',
   payload: walk,

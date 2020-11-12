@@ -4,7 +4,7 @@ import authFormErrors from './authErrors';
 import getFoodReducer from './getFoodReducer';
 import getGeneralHealthsReducer from './getGeneralHealthsReducer';
 import getMedicationsReducer from './getMedicationReducer';
-import getTreatsReducer from './getTreatReducer';
+import TreatsReducer from './TreatsReducer';
 import WalksReducer from './WalksReducer';
 
 const RootReducer = combineReducers({
@@ -13,7 +13,7 @@ const RootReducer = combineReducers({
   food: getFoodReducer,
   generalHealths: getGeneralHealthsReducer,
   medications: getMedicationsReducer,
-  treats: getTreatsReducer,
+  treats: TreatsReducer,
   walks: WalksReducer,
 
 });

@@ -45,7 +45,7 @@ const Treats = () => {
             </p>
           </div>
         ))}
-        <BottomNav />
+        <BottomNav addLink="/addtreat" />
       </div>
     )
   );
