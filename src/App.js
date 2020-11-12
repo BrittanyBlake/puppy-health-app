@@ -14,6 +14,7 @@ import General from './components/general/General';
 import AddWalks from './components/walks/addWalks';
 import AddTreats from './components/treats/addTreats';
 import AddMedications from './components/medication/AddMedications';
+import AddGeneralHealths from './components/general/AddGeneralHealths';
 // import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/profile" component={Profile}>
+        <Route exact path="/" component={Profile}>
           {currentUser ? <Profile /> : <LoginForm />}
         </Route>
         <Route exact path="/walks" component={Walks}>
@@ -48,6 +49,9 @@ function App() {
         </Route>
         <Route exact path="/addmedication" component={AddMedications}>
           {currentUser ? <AddMedications /> : <LoginForm />}
+        </Route>
+        <Route exact path="/addgeneralhealth" component={AddGeneralHealths}>
+          {currentUser ? <AddGeneralHealths /> : <LoginForm />}
         </Route>
         <Route exact path="/login" component={LoginForm} />
 
