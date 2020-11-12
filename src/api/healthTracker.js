@@ -75,6 +75,7 @@ const PuppyHealthApi = (() => {
       );
       dispatch(reducerAction.addFoods(data.food));
       console.log('add foods:', data.food);
+      window.location = '/food';
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -14,6 +14,7 @@ const AddFoods = ({ props }) => {
   const classes = useStyles(props);
   const { FoodIndex } = useParams();
   const dispatch = useDispatch();
+  // const history = useHistory();
 
   const initialFormState = {
     brand: '',
@@ -24,7 +25,7 @@ const AddFoods = ({ props }) => {
   };
 
   const [values, setValues] = useState(initialFormState);
-  const [isSubmited, setSubmitted] = useState(false);
+  // const [isSubmited, setSubmitted] = useState(false);
 
   const handleChange = event => {
     const { name, value, type } = event.target;
@@ -38,13 +39,13 @@ const AddFoods = ({ props }) => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addFoods(values));
     console.log('added');
-    setSubmitted(true);
+    // history.push('/food');
   };
 
-  if (isSubmited) {
-    // redirect to the tracking page when implemented
-    return <Redirect to="/" />;
-  }
+  // if (isSubmited) {
+  //   // redirect to the tracking page when implemented
+  //   return <Redirect to="/food" />;
+  // }
 
   return (
     <div>

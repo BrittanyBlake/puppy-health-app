@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-import Delete from '../delete/Delete';
+// import Delete from '../delete/Delete';
+import TrackCard from '../trackCard/trackCard';
 
 const Food = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Food = () => {
     return null;
   }
 
+  const formatDate = datetime => new Date(datetime).toDateString();
   // const handleClick = e => {
   //   e.preventDefault();
   //   console.log('deleted');
@@ -39,7 +41,9 @@ const Food = () => {
           {' '}
           {allFoods.map(food => (
             <div key={food.id}>
-              <p>
+              <TrackCard date={formatDate(food.date)} id={food.id} />
+
+              {/*  <p>
                 Brand:
                 {food.brand}
               </p>
@@ -55,7 +59,7 @@ const Food = () => {
                 date:
                 {food.date}
               </p>
-              <Delete />
+            <Delete /> */}
             </div>
           ))}
         </div>

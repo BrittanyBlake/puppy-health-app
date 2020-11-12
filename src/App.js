@@ -10,6 +10,7 @@ import Walks from './components/walks/Walks';
 import Treats from './components/treats/Treats';
 import Medication from './components/medication/Medication';
 import Food from './components/food/Food';
+import FoodDetails from './components/food/FoodDetails';
 import General from './components/general/General';
 import AddWalks from './components/walks/addWalks';
 import AddTreats from './components/treats/addTreats';
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route exact path="/food" component={Food}>
           {currentUser ? <Food /> : <LoginForm />}
+        </Route>
+        <Route exact path="/food/:id" component={FoodDetails}>
+          {currentUser ? <FoodDetails /> : <LoginForm />}
         </Route>
         <Route exact path="/addwalk" component={AddWalks}>
           {currentUser ? <AddWalks /> : <LoginForm />}
