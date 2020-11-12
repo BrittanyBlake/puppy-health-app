@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -8,7 +8,6 @@ import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './addWalks.styles';
-
 
 const AddWalks = ({ props }) => {
   const classes = useStyles(props);
@@ -41,10 +40,10 @@ const AddWalks = ({ props }) => {
     setSubmitted(true);
   };
 
-     if (isSubmited) {
-       //redirect to the tracking page when implemented
-       return <Redirect to="/" />;
-     }
+  if (isSubmited) {
+    // redirect to the tracking page when implemented
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -41,11 +41,10 @@ const AddMedications = ({ props }) => {
     setSubmitted(true);
   };
 
-   if (isSubmited) {
-     //redirect to the tracking page when implemented
-     return <Redirect to="/" />;
-   }
-
+  if (isSubmited) {
+    // redirect to the tracking page when implemented
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
