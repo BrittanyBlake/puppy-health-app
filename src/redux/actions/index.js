@@ -30,6 +30,13 @@ export const getMedications = medication => ({
   payload: medication,
 });
 
+
+export const addMedications = (medication) => ({
+  type: "ADD_MEDICATIONS",
+  payload: medication,
+});
+
+
 export const getTreats = treat => ({
   type: 'GET_TREATS',
   payload: treat,

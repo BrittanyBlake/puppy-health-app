@@ -88,6 +88,36 @@ const PuppyHealthApi = (() => {
     }
   };
 
+   const addMedications = (medication) => async (dispatch) => {
+     const token = localStorage.getItem("token");
+     const config = {
+       headers: {
+         Authorization: `Bearer ${token}`,
+       },
+     };
+
+     const medications = {
+       dosage: medication.dosage,
+       name: medication.name,
+       date: medication.date,
+       time: medication.time,
+       use: medication.use,
+       user_id: medication.user_id,
+     };
+     try {
+       const data = await axios.post(
+         "http://localhost:3000/api/v1/medications",
+         medications,
+         config
+       );
+       dispatch(reducerAction.addMedications(data.medication));
+       console.log("add meds:", data.medication);
+     } catch (error) {
+       dispatch(reducerAction.formErrors(error.response.data.message));
+     }
+   };
+
+
   const getTreats = () => async dispatch => {
     const token = localStorage.getItem('token');
     try {
@@ -182,6 +212,7 @@ const PuppyHealthApi = (() => {
     getFoods,
     getGeneralHealths,
     getMedications,
+    addMedications,
     getTreats,
     addTreats,
     getWalks,

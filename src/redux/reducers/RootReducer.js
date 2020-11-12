@@ -3,7 +3,7 @@ import userReducer from './userReducer';
 import authFormErrors from './authErrors';
 import getFoodReducer from './getFoodReducer';
 import getGeneralHealthsReducer from './getGeneralHealthsReducer';
-import getMedicationsReducer from './getMedicationReducer';
+import MedicationsReducer from './MedicationReducer';
 import TreatsReducer from './TreatsReducer';
 import WalksReducer from './WalksReducer';
 
@@ -12,7 +12,7 @@ const RootReducer = combineReducers({
   errors: authFormErrors,
   food: getFoodReducer,
   generalHealths: getGeneralHealthsReducer,
-  medications: getMedicationsReducer,
+  medications: MedicationsReducer,
   treats: TreatsReducer,
   walks: WalksReducer,
 
