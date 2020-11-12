@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
+import TrackCard from '../trackCard/trackCard';
 
 const Treats = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const Treats = () => {
     return null;
   }
 
+  const formatDate = datetime => new Date(datetime).toDateString();
+
   return (
     console.log('treats', allTreats),
     (
@@ -31,7 +34,8 @@ const Treats = () => {
         {' '}
         {allTreats.map(treat => (
           <div key={treat.id}>
-            <p>
+            <TrackCard date={formatDate(treat.date)} />
+            {/* <p>
               Amount:
               {treat.amount}
             </p>
@@ -42,7 +46,7 @@ const Treats = () => {
             <p>
               treat name:
               {treat.treat_type}
-            </p>
+           </p> */}
           </div>
         ))}
         <BottomNav addLink="/addtreat" />

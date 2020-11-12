@@ -4,6 +4,7 @@ import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 // import { addWalks } from '../../redux/actions';
+import TrackCard from '../trackCard/trackCard';
 
 const Walks = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,8 @@ const Walks = () => {
     return null;
   }
 
+  const formatDate = datetime => new Date(datetime).toDateString();
+
   return (
     console.log('walks', allWalks),
     (
@@ -32,7 +35,8 @@ const Walks = () => {
         {' '}
         {allWalks.map(walk => (
           <div key={walk.id}>
-            <p>
+            <TrackCard date={formatDate(walk.date)} />
+            {/* <p>
               distance:
               {walk.distance}
             </p>
@@ -43,7 +47,7 @@ const Walks = () => {
             <p>
               time:
               {walk.time}
-            </p>
+           </p> */}
           </div>
         ))}
         <BottomNav addLink="/addwalk" />

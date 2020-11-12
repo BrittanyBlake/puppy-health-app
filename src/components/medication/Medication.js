@@ -4,6 +4,8 @@ import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 
+import TrackCard from '../trackCard/trackCard';
+
 const Medication = () => {
   const dispatch = useDispatch();
   const allMedications = useSelector(state => state.medications);
@@ -22,6 +24,8 @@ const Medication = () => {
     return null;
   }
 
+  const formatDate = datetime => new Date(datetime).toDateString();
+
   return (
     console.log('medications', allMedications),
     (
@@ -31,7 +35,8 @@ const Medication = () => {
         {' '}
         {allMedications.map(med => (
           <div key={med.id}>
-            <p>
+            <TrackCard date={formatDate(med.date)} />
+            {/* <p>
               Date:
               {med.date}
             </p>
@@ -50,7 +55,7 @@ const Medication = () => {
             <p>
               What is it for?
               {med.use}
-            </p>
+          </p> */}
           </div>
         ))}
         <BottomNav addLink="/addmedication" />
