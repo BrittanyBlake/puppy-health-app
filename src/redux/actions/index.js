@@ -25,6 +25,11 @@ export const addFoods = food => ({
   payload: food,
 });
 
+export const getFoodsId = food => ({
+  type: 'GET_FOODS_ID',
+  payload: food,
+});
+
 export const getGeneralHealths = generalHealth => ({
   type: 'GET_GENERAL_HEALTHS',
   payload: generalHealth,

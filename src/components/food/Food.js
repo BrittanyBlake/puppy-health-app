@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -41,8 +42,9 @@ const Food = () => {
           {' '}
           {allFoods.map(food => (
             <div key={food.id}>
-              <TrackCard date={formatDate(food.date)} id={food.id} />
-
+              <Link to={`/food/${food.id}`}>
+                <TrackCard date={formatDate(food.date)} />
+              </Link>
               {/*  <p>
                 Brand:
                 {food.brand}
