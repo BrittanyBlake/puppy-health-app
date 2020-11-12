@@ -1,8 +1,8 @@
 const GeneralHealthsReducer = (state = [], action) => {
   switch (action.type) {
-    case "GET_GENERAL_HEALTHS":
+    case 'GET_GENERAL_HEALTHS':
       return action.payload;
-    case "ADD_GENERAL_HEALTHS":
+    case 'ADD_GENERAL_HEALTHS':
       return {
         ...state,
         generalHealth: action.payload,

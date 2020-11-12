@@ -25,8 +25,8 @@ export const getGeneralHealths = generalHealth => ({
   payload: generalHealth,
 });
 
-export const addGeneralHealths = (generalHealth) => ({
-  type: "ADD_GENERAL_HEALTHS",
+export const addGeneralHealths = generalHealth => ({
+  type: 'ADD_GENERAL_HEALTHS',
   payload: generalHealth,
 });
 

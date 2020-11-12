@@ -70,35 +70,34 @@ const PuppyHealthApi = (() => {
     }
   };
 
-    const addGeneralHealths = (generalHealth) => async (dispatch) => {
-      const token = localStorage.getItem("token");
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-
-      const generalHealths = {
-        weight: generalHealth.weight,
-        energy_level: generalHealth.energy_level,
-        hunger_level: generalHealth.hunger_level,
-        date: generalHealth.date,
-        extra: generalHealth.extra,
-        user_id: generalHealth.user_id,
-      };
-      try {
-        const data = await axios.post(
-          "http://localhost:3000/api/v1/general_healths'",
-          generalHealths,
-          config
-        );
-        dispatch(reducerAction.addGeneralHealths(data.generalHealth));
-        console.log("add meds:", data.generalHealth);
-      } catch (error) {
-        dispatch(reducerAction.formErrors(error.response.data.message));
-      }
+  const addGeneralHealths = generalHealth => async dispatch => {
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     };
 
+    const generalHealths = {
+      weight: generalHealth.weight,
+      energy_level: generalHealth.energy_level,
+      hunger_level: generalHealth.hunger_level,
+      date: generalHealth.date,
+      extra: generalHealth.extra,
+      user_id: generalHealth.user_id,
+    };
+    try {
+      const data = await axios.post(
+        'http://localhost:3000/api/v1/general_healths',
+        generalHealths,
+        config,
+      );
+      dispatch(reducerAction.addGeneralHealths(data.generalHealth));
+      console.log('add meds:', data.generalHealth);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
 
   const getMedications = () => async dispatch => {
     const token = localStorage.getItem('token');

@@ -7,20 +7,20 @@ import TextField from '@material-ui/core/TextField';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-import useStyles from './addMedications.styles';
+import useStyles from './addGeneralHealths.styles';
 
-const AddMedications = ({ props }) => {
+const AddGeneralHealths = ({ props }) => {
   const classes = useStyles(props);
-  const { MedIndex } = useParams();
+  const { GenHealthIndex } = useParams();
   const dispatch = useDispatch();
 
   const initialFormState = {
-    dosage: '',
-    name: '',
+    weight: '',
+    extra: '',
     date: '',
-    time: '',
-    use: '',
-    user_id: Number(MedIndex),
+    energy_level: '',
+    hunger_level: '',
+    user_id: Number(GenHealthIndex),
   };
 
   const [values, setValues] = useState(initialFormState);
@@ -35,7 +35,7 @@ const AddMedications = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(PuppyHealthApi.addMedications(values));
+    dispatch(PuppyHealthApi.addGeneralHealths(values));
     console.log('added');
   };
 
@@ -63,13 +63,13 @@ const AddMedications = ({ props }) => {
             margin="normal"
             required
             fullWidth
-            id="time"
-            type="time"
+            id="weight"
+            type="number"
             onChange={handleChange}
-            value={values.time}
-            label="time"
-            name="time"
-            autoComplete="time"
+            value={values.weight}
+            label="weight"
+            name="weight"
+            autoComplete="number"
             autoFocus
           />
           <TextField
@@ -78,10 +78,10 @@ const AddMedications = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.dosage}
-            name="dosage"
+            value={values.energy_level}
+            name="energy_level"
             type="string"
-            id="dosage"
+            id="energy_level"
             autoComplete="string"
             autoFocus
           />
@@ -91,10 +91,10 @@ const AddMedications = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.name}
-            name="name"
+            value={values.hunger_level}
+            name="hunger_level"
             type="string"
-            id="name"
+            id="hunger_level"
             autoComplete="string"
             autoFocus
           />
@@ -104,10 +104,10 @@ const AddMedications = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.use}
-            name="use"
+            value={values.extra}
+            name="extra"
             type="string"
-            id="use"
+            id="extra"
             autoComplete="string"
             autoFocus
           />
@@ -127,12 +127,12 @@ const AddMedications = ({ props }) => {
   );
 };
 
-AddMedications.propTypes = {
+AddGeneralHealths.propTypes = {
   props: PropTypes.func,
 };
 
-AddMedications.defaultProps = {
+AddGeneralHealths.defaultProps = {
   props: () => {},
 };
 
-export default AddMedications;
+export default AddGeneralHealths;
