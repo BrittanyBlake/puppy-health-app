@@ -30,7 +30,7 @@ const PuppyHealthApi = (() => {
       });
       localStorage.setItem('token', data.data.auth_token);
       dispatch(reducerAction.loginUser(data.user));
-      window.location = '/profile';
+      window.location = '/';
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }

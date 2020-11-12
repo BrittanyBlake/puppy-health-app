@@ -20,7 +20,7 @@ const Navbar = ({ props }) => {
   const Logout = () => {
     localStorage.removeItem('token');
     dispatch(logoutUser());
-    history.push('/');
+    history.push('/login');
   };
 
   return (
