@@ -9,10 +9,13 @@ import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './addWalks.styles';
 
+
 const AddWalks = ({ props }) => {
   const classes = useStyles(props);
   const { walkIndex } = useParams();
   const dispatch = useDispatch();
+
+  const [isSubmited, setSubmitted] = useState(false);
 
   const initialFormState = {
     time: '',
@@ -35,7 +38,13 @@ const AddWalks = ({ props }) => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addWalks(values));
     console.log('added');
+    setSubmitted(true);
   };
+
+     if (isSubmited) {
+       //redirect to the tracking page when implemented
+       return <Redirect to="/" />;
+     }
 
   return (
     <div>

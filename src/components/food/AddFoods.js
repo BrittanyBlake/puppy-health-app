@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -23,6 +24,7 @@ const AddFoods = ({ props }) => {
   };
 
   const [values, setValues] = useState(initialFormState);
+  const [isSubmited, setSubmitted] = useState(false);
 
   const handleChange = event => {
     const { name, value, type } = event.target;
@@ -36,7 +38,13 @@ const AddFoods = ({ props }) => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addFoods(values));
     console.log('added');
+    setSubmitted(true);
   };
+
+  if (isSubmited) {
+   //redirect to the tracking page when implemented
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>

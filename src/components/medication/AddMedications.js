@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -13,6 +13,7 @@ const AddMedications = ({ props }) => {
   const classes = useStyles(props);
   const { MedIndex } = useParams();
   const dispatch = useDispatch();
+  const [isSubmited, setSubmitted] = useState(false);
 
   const initialFormState = {
     dosage: '',
@@ -37,7 +38,14 @@ const AddMedications = ({ props }) => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addMedications(values));
     console.log('added');
+    setSubmitted(true);
   };
+
+   if (isSubmited) {
+     //redirect to the tracking page when implemented
+     return <Redirect to="/" />;
+   }
+
 
   return (
     <div>
