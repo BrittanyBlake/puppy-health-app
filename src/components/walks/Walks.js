@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -33,10 +34,14 @@ const Walks = () => {
         <Navbar />
         <h1> WALKS PAGE</h1>
         {' '}
-        {allWalks.map(walk => (
-          <div key={walk.id}>
-            <TrackCard date={formatDate(walk.date)} />
-            {/* <p>
+        {allWalks.length > 0
+          && allWalks.map(walk => (
+            <div key={walk.id}>
+              <Link to={`/walks/${walk.id}`}>
+                <TrackCard date={formatDate(walk.date)} />
+              </Link>
+
+              {/* <p>
               distance:
               {walk.distance}
             </p>
@@ -48,8 +53,8 @@ const Walks = () => {
               time:
               {walk.time}
            </p> */}
-          </div>
-        ))}
+            </div>
+          ))}
         <BottomNav addLink="/addwalk" trackLink="/walks" />
       </div>
     )

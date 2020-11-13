@@ -76,6 +76,11 @@ export const getWalks = walk => ({
   payload: walk,
 });
 
+export const getWalksId = walk => ({
+  type: 'GET_WALKS_ID',
+  payload: walk,
+});
+
 export const addWalks = walk => ({
   type: 'ADD_WALKS',
   payload: walk,

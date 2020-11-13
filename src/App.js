@@ -7,6 +7,7 @@ import {
 import LoginForm from './components/login/LoginForm';
 import Profile from './components/profile/Profile';
 import Walks from './components/walks/Walks';
+import WalkDetails from './components/walks/WalkDetails';
 import Treats from './components/treats/Treats';
 import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/walks" component={Walks}>
           {currentUser ? <Walks /> : <LoginForm />}
         </Route>
+        <Route exact path="/walks/:walkDetailsIndex" component={WalkDetails} />
         <Route exact path="/treats" component={Treats}>
           {currentUser ? <Treats /> : <LoginForm />}
         </Route>

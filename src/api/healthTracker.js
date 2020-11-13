@@ -290,6 +290,24 @@ const PuppyHealthApi = (() => {
     }
   };
 
+  const getWalksId = id => async dispatch => {
+    const token = localStorage.getItem('token');
+    try {
+      const data = await axios.get(
+        `http://localhost:3000/api/v1/walks/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      dispatch(reducerAction.getWalksId(data.data));
+      console.log('data id:', data.data);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
   const addWalks = walk => async dispatch => {
     const token = localStorage.getItem('token');
     const config = {
@@ -330,6 +348,7 @@ const PuppyHealthApi = (() => {
     addTreats,
     getTreatsId,
     getWalks,
+    getWalksId,
     addWalks,
   };
 })();

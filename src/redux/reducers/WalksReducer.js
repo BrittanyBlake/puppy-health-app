@@ -7,6 +7,8 @@ const WalksReducer = (state = [], action) => {
         ...state,
         walk: action.payload,
       };
+    case 'GET_WALKS_ID':
+      return action.payload;
     default:
       return state;
   }
