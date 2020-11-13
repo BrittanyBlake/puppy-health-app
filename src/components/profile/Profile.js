@@ -17,27 +17,21 @@ const Profile = ({ props }) => {
       <Grid container className={classes.root} spacing={3}>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="Food" cardLink="/food" />
-
         </Grid>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="Treats" cardLink="/treats" />
-
         </Grid>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="Walks" cardLink="/walks" />
-
         </Grid>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="Medications" cardLink="/medication" />
-
         </Grid>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="General Health" cardLink="/general" />
-
         </Grid>
         <Grid item xs={12} sm={6} md={6} className={classes.control}>
           <CategoryCard name="About your pup" cardLink="/about" />
-
         </Grid>
       </Grid>
 

@@ -28,7 +28,6 @@ const TrackCard = ({ props, date }) => {
   }, []);
 
   return (
-
     <Card className={classes.root}>
       <CardActionArea>
         <CardContent>
@@ -37,7 +36,7 @@ const TrackCard = ({ props, date }) => {
               <CircularProgress
                 variant="static"
                 value={progress}
-                style={{ color: '#42B5E8', fontWeight: 'bold' }}
+                style={{ color: '#97E493', fontWeight: 'bold' }}
               />
               {/* <DonutLargeRoundedIcon
                   style={{ color: '#42B5E8', fontWeight: 'bold' }}
@@ -62,7 +61,6 @@ const TrackCard = ({ props, date }) => {
         </CardContent>
       </CardActionArea>
     </Card>
-
   );
 };
 
