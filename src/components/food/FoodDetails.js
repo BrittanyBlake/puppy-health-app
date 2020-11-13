@@ -29,16 +29,6 @@ const FoodDetails = () => {
     foodDetailsId();
   }, []);
 
-  // dispatch(PuppyHealthApi.getFoodsId());
-
-  // const foodId = computedMatch.params.ood;
-
-  // const foodState = useSelector(state => state.food);
-
-  // React.useEffect(() => {
-  //   dispatch(PuppyHealthApi.getFoodsId(foodId));
-  // }, []);
-
   if (!getFoodDetailsId) {
     console.log('nada');
     return null;
