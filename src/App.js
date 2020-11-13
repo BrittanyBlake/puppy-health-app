@@ -43,8 +43,8 @@ function App() {
         <Route exact path="/food" component={Food}>
           {currentUser ? <Food /> : <LoginForm />}
         </Route>
-        <Route exact path="/food/:id" component={FoodDetails}>
-          {currentUser ? <FoodDetails /> : <LoginForm />}
+        <Route exact path="/food/:foodDetailsIndex" component={FoodDetails}>
+          {/* currentUser ? <FoodDetails /> : <LoginForm /> */}
         </Route>
         <Route exact path="/addwalk" component={AddWalks}>
           {currentUser ? <AddWalks /> : <LoginForm />}
@@ -62,7 +62,6 @@ function App() {
           {currentUser ? <AddFoods /> : <LoginForm />}
         </Route>
         <Route exact path="/login" component={LoginForm} />
-
       </Switch>
     </div>
   );

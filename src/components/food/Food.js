@@ -32,8 +32,12 @@ const Food = () => {
   //   console.log('deleted');
   // };
 
+  // const handleClick = () => {
+  //   console.log('clicked');
+  // };
+
   return (
-    console.log('foods', allFoods),
+    console.log('foods', allFoods.id),
     (
       <div>
         <Navbar />
@@ -43,7 +47,9 @@ const Food = () => {
           {allFoods.map(food => (
             <div key={food.id}>
               <Link to={`/food/${food.id}`}>
-                <TrackCard date={formatDate(food.date)} />
+                <TrackCard
+                  date={formatDate(food.date)}
+                />
               </Link>
               {/*  <p>
                 Brand:

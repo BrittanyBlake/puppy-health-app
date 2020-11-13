@@ -46,7 +46,7 @@ const PuppyHealthApi = (() => {
           },
         });
       dispatch(reducerAction.getFoods(data.data));
-      console.log(data.data);
+      console.log('foods api', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -93,7 +93,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getFoodsId(data.data));
-      console.log('api', data.data);
+      console.log('api', data.id);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
