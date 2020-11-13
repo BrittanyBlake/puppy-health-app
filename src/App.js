@@ -22,6 +22,7 @@ import AddGeneralHealths from './components/general/AddGeneralHealths';
 import AddFoods from './components/food/AddFoods';
 import MedicationDetails from './components/medication/MedicationDetails';
 import SignUpForm from './components/signUp/SignUpForm';
+import Calendar from './components/calendar/Calendar';
 // import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
         </Route>
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignUpForm} />
+        <Route exact path="/calendar" component={Calendar} />
       </Switch>
     </div>
   );
