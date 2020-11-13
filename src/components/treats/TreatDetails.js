@@ -3,13 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // import PropTypes from 'prop-types';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 // import petfood from '../../assets/images/petfood.png';
+import useStyles from './TreatDetail.styles';
 import { ReactComponent as Treats } from '../../assets/images/treats.svg';
 
 const TreatDetails = () => {
+  const classes = useStyles();
   const { treatDetailsIndex } = useParams();
   const dispatch = useDispatch();
   const getTreatDetailsId = useSelector(state => state.treats);
@@ -22,16 +27,6 @@ const TreatDetails = () => {
     treatDetailsId();
   }, []);
 
-  // dispatch(PuppyHealthApi.getFoodsId());
-
-  // const foodId = computedMatch.params.ood;
-
-  // const foodState = useSelector(state => state.food);
-
-  // React.useEffect(() => {
-  //   dispatch(PuppyHealthApi.getFoodsId(foodId));
-  // }, []);
-
   if (!getTreatDetailsId) {
     console.log('nada');
     return null;
@@ -42,47 +37,37 @@ const TreatDetails = () => {
     (
       <div>
         <Navbar />
-        <Treats style={{ fill: '#97E493' }} height={200} width={200} />
-        <h1>
+
+        <h1 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
           {' '}
           {formatDate(getTreatDetailsId.date)}
         </h1>
-        <p>Treat</p>
-        <p>
-          {getTreatDetailsId.treat_type}
-          {' '}
-        </p>
-        <p>AMOUNT</p>
-        <p>
-          {getTreatDetailsId.amount}
-          {' '}
-          grams
-          {' '}
-        </p>
 
-        {/* <div>
-        {' '}
-        {allFoods.map(food => (
-          <div key={food.id}>
-            <p>
-              Brand:
-              {food.brand}
-            </p>
-            <p>
-              Amount:
-              {food.amount}
-            </p>
-            <p>
-              time:
-              {food.time}
-            </p>
-            <p>
-              date:
-              {food.date}
-            </p>
-          </div>
-        ))}
-        </div> */}
+        <Container maxWidth="sm">
+          <Paper className={classes.paper}>
+            <Grid container>
+              <Grid container item xs={6}>
+                <Treats style={{ fill: '#97E493' }} height={200} width={200} />
+              </Grid>
+              <Grid container item xs={6}>
+                <Grid contianer item xs={12}>
+                  <small>TREAT</small>
+                  <p>{getTreatDetailsId.treat_type}</p>
+                </Grid>
+                <Grid contianer item xs={12}>
+                  <small>AMOUNT</small>
+                  <p>
+                    {getTreatDetailsId.amount}
+                    {' '}
+                    grams
+                    {' '}
+                  </p>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Container>
+
         <BottomNav addLink="/addtreat" trackLink="/treats" />
       </div>
     )
