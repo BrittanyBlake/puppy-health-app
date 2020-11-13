@@ -36,7 +36,7 @@ const Profile = ({ props }) => {
             <CategoryCard name="General Health" cardLink="/general" />
           </Grid>
           <Grid item xs={12} sm={6} md={6} className={classes.control}>
-            <CategoryCard name="About your pup" cardLink="/about" />
+            <CategoryCard name="Appointments" cardLink="/appointments" />
           </Grid>
         </Grid>
       </Container>
