@@ -64,8 +64,9 @@ const AddFoods = ({ props }) => {
             id="date"
             type="date"
             onChange={handleChange}
+            // defaultValue="2020-05-24"
             value={values.date}
-            label="date"
+            // label="date"
             name="date"
             autoComplete="date"
             autoFocus
@@ -79,7 +80,7 @@ const AddFoods = ({ props }) => {
             type="time"
             onChange={handleChange}
             value={values.time}
-            label="time"
+            // label="time"
             name="time"
             autoComplete="time"
             autoFocus
@@ -91,6 +92,7 @@ const AddFoods = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.brand}
+            label="What Food Brand do you feed your pup?"
             name="brand"
             type="string"
             id="brand"
@@ -104,6 +106,7 @@ const AddFoods = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.amount}
+            label="How much grams does your pup get?"
             name="amount"
             type="number"
             id="amount"

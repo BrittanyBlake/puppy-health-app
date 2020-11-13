@@ -147,7 +147,6 @@ const PuppyHealthApi = (() => {
       energy_level: generalHealth.energy_level,
       hunger_level: generalHealth.hunger_level,
       date: generalHealth.date,
-      extra: generalHealth.extra,
       user_id: generalHealth.user_id,
     };
     try {

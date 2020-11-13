@@ -17,7 +17,6 @@ const AddGeneralHealths = ({ props }) => {
 
   const initialFormState = {
     weight: '',
-    extra: '',
     date: '',
     energy_level: '',
     hunger_level: '',
@@ -25,6 +24,8 @@ const AddGeneralHealths = ({ props }) => {
   };
 
   const [values, setValues] = useState(initialFormState);
+  // const [energyLevel, setEnergyLevel] = useState('');
+  // const [hungerLevel, setHungerLevel] = useState('');
 
   const handleChange = event => {
     const { name, value, type } = event.target;
@@ -33,6 +34,14 @@ const AddGeneralHealths = ({ props }) => {
       [name]: type === 'number' ? parseInt(value, 10) : value,
     });
   };
+
+  // const handleEnergySelection = e => {
+  //   setEnergyLevel(e.target.value);
+  // };
+
+  // const handleHungerSelection = e => {
+  //   setHungerLevel(e.target.value);
+  // };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -49,6 +58,10 @@ const AddGeneralHealths = ({ props }) => {
   return (
     <div>
       <Navbar />
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        How is your pup feeling today?
+      </h2>
+
       <div className={classes.root}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
@@ -60,7 +73,7 @@ const AddGeneralHealths = ({ props }) => {
             type="date"
             onChange={handleChange}
             value={values.date}
-            label="date"
+            // label="date"
             name="date"
             autoComplete="date"
             autoFocus
@@ -74,7 +87,7 @@ const AddGeneralHealths = ({ props }) => {
             type="number"
             onChange={handleChange}
             value={values.weight}
-            label="weight"
+            label="How much does your pup weigh?"
             name="weight"
             autoComplete="number"
             autoFocus
@@ -86,12 +99,14 @@ const AddGeneralHealths = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.energy_level}
+            label="How energetic is your pup today?"
             name="energy_level"
             type="string"
             id="energy_level"
             autoComplete="string"
             autoFocus
           />
+
           <TextField
             variant="outlined"
             margin="normal"
@@ -99,22 +114,10 @@ const AddGeneralHealths = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.hunger_level}
+            label="How hungry is your pup today?"
             name="hunger_level"
             type="string"
             id="hunger_level"
-            autoComplete="string"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            onChange={handleChange}
-            value={values.extra}
-            name="extra"
-            type="string"
-            id="extra"
             autoComplete="string"
             autoFocus
           />
