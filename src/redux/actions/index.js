@@ -90,3 +90,18 @@ export const addWalks = walk => ({
   type: 'ADD_WALKS',
   payload: walk,
 });
+
+export const getAppointments = (appointment) => ({
+  type: "GET_APPOINTMENTS",
+  payload: appointment,
+});
+
+export const getAppointmentsId = (appointment) => ({
+  type: "GET_APPOINTMENTS_ID",
+  payload: appointment,
+});
+
+export const addAppointments = (appointment) => ({
+  type: "ADD_APPOINTMENTS",
+  payload: appointment,
+});

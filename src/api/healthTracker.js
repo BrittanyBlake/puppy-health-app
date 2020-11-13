@@ -350,6 +350,65 @@ const PuppyHealthApi = (() => {
     }
   };
 
+  const getAppointments = () => async dispatch => {
+    const token = localStorage.getItem('token');
+    try {
+      const data = await axios.get(
+        'http://localhost:3000/api/v1/appointments',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      dispatch(reducerAction.getAppointments(data.data));
+      console.log('data:', data.data);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
+  const getAppointmentsId = (id) => async (dispatch) => {
+    const token = localStorage.getItem("token");
+    try {
+      const data = await axios.get(`http://localhost:3000/api/v1/appointments/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      dispatch(reducerAction.getAppointmentsId(data.data));
+      console.log("data id:", data.data);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
+  const addAppointments = walk => async dispatch => {
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const appointments = {
+      date: appointment.date,
+      location: appointment.location,
+      time: appointment.time,
+      type: appointment.type,
+      user_id: appointment.user_id,
+    };
+    try {
+      const data = await axios.post(
+        'http://localhost:3000/api/v1/appointments', appointments, config,
+      );
+      dispatch(reducerAction.addAppointments(data.appointments));
+      console.log('add data:', data.appointments);
+    } catch (error) {
+      dispatch(reducerAction.formErrors(error.response.data.message));
+    }
+  };
+
   return {
     signUpUser,
     loginUser,
@@ -368,6 +427,9 @@ const PuppyHealthApi = (() => {
     getWalks,
     getWalksId,
     addWalks,
+    getAppointments,
+    getAppointmentsId,
+    addAppointments,
   };
 })();
 

@@ -6,6 +6,7 @@ import GeneralHealthsReducer from './GeneralHealthsReducer';
 import MedicationsReducer from './MedicationReducer';
 import TreatsReducer from './TreatsReducer';
 import WalksReducer from './WalksReducer';
+import AppointmentReducer from './AppointmentReducer';
 
 const RootReducer = combineReducers({
   currentUser: userReducer,
@@ -15,6 +16,7 @@ const RootReducer = combineReducers({
   medications: MedicationsReducer,
   treats: TreatsReducer,
   walks: WalksReducer,
+  appointments: AppointmentReducer,
 
 });
 
