@@ -90,7 +90,7 @@ const FoodDetails = () => {
           </div>
         ))}
         </div> */}
-        <BottomNav addLink="/addfood" />
+        <BottomNav addLink="/addfood" trackLink="/food" />
       </div>
     )
   );

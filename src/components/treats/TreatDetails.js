@@ -83,7 +83,7 @@ const TreatDetails = () => {
           </div>
         ))}
         </div> */}
-        <BottomNav addLink="/addfood" />
+        <BottomNav addLink="/addtreat" trackLink="/treats" />
       </div>
     )
   );

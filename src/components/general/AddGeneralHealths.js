@@ -129,7 +129,7 @@ const AddGeneralHealths = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav />
+      <BottomNav trackLink="/general" />
     </div>
   );
 };

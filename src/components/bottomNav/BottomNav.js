@@ -9,7 +9,7 @@ import PieChartIcon from '@material-ui/icons/PieChart';
 import PropTypes from 'prop-types';
 import useStyles from './BottomNav.styles';
 
-const BottomNavbar = ({ props, addLink }) => {
+const BottomNavbar = ({ props, addLink, trackLink }) => {
   const classes = useStyles(props);
   const [value, setValue] = React.useState('Add');
 
@@ -31,13 +31,15 @@ const BottomNavbar = ({ props, addLink }) => {
           style={{ color: 'white' }}
         />
       </Link>
+      <Link to={trackLink}>
+        <BottomNavigationAction
+          label="Track"
+          value="track"
+          icon={<TrendingUpIcon />}
+          style={{ color: 'white' }}
+        />
+      </Link>
 
-      <BottomNavigationAction
-        label="Track"
-        value="track"
-        icon={<TrendingUpIcon />}
-        style={{ color: 'white' }}
-      />
       <BottomNavigationAction
         label="Progress"
         value="progress"
@@ -59,10 +61,12 @@ const BottomNavbar = ({ props, addLink }) => {
 BottomNavbar.propTypes = {
   props: PropTypes.func,
   addLink: PropTypes.string,
+  trackLink: PropTypes.string,
 };
 
 BottomNavbar.defaultProps = {
   props: () => {},
   addLink: '',
+  trackLink: '',
 };
 export default BottomNavbar;

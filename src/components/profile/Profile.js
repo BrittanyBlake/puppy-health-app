@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 // import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Navbar from '../navbar/Navbar';
-import BottomNav from '../bottomNav/BottomNav';
 import CategoryCard from '../categoryCard/categoryCard';
 import useStyles from '../categoryCard/categoryCard.styles';
 
@@ -35,7 +34,6 @@ const Profile = ({ props }) => {
         </Grid>
       </Grid>
 
-      <BottomNav />
     </div>
   );
 };

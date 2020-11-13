@@ -91,7 +91,7 @@ const GeneralDetails = () => {
           </div>
         ))}
         </div> */}
-        <BottomNav addLink="/addfood" />
+        <BottomNav addLink="/addgeneralHealth" trackLink="/general" />
       </div>
     )
   );

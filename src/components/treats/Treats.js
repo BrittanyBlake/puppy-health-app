@@ -33,13 +33,14 @@ const Treats = () => {
         <Navbar />
         <h1> TREATS PAGE</h1>
         {' '}
-        {allTreats.length > 0 && allTreats.map(treat => (
-          <div key={treat.id}>
-            <Link to={`/treats/${treat.id}`}>
-              <TrackCard date={formatDate(treat.date)} />
-            </Link>
+        {allTreats.length > 0
+          && allTreats.map(treat => (
+            <div key={treat.id}>
+              <Link to={`/treats/${treat.id}`}>
+                <TrackCard date={formatDate(treat.date)} />
+              </Link>
 
-            {/* <p>
+              {/* <p>
               Amount:
               {treat.amount}
             </p>
@@ -51,9 +52,9 @@ const Treats = () => {
               treat name:
               {treat.treat_type}
            </p> */}
-          </div>
-        ))}
-        <BottomNav addLink="/addtreat" />
+            </div>
+          ))}
+        <BottomNav addLink="/addtreat" trackLink="/treats" />
       </div>
     )
   );
