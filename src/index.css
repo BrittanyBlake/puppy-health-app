@@ -16,3 +16,13 @@ code {
 a {
   text-decoration: none;
 }
+
+p{
+  font-family: 'Helvetica Neue' ;
+  color:#5C7185;
+  font-weight: bold;
+}
+small{
+  color:#808080;
+  /* font-weight: bold; */
+}
