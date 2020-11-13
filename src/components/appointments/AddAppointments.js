@@ -7,20 +7,21 @@ import TextField from '@material-ui/core/TextField';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-import useStyles from './addWalks.styles';
+import useStyles from './addAppointments.styles';
 
-const AddWalks = ({ props }) => {
+const AddAppointments = ({ props }) => {
   const classes = useStyles(props);
-  const { walkIndex } = useParams();
+  const { AppointmentIndex } = useParams();
   const dispatch = useDispatch();
 
   const [isSubmited, setSubmitted] = useState(false);
 
   const initialFormState = {
     time: '',
-    distance: '',
+    appt_type: '',
     date: '',
-    user_id: Number(walkIndex),
+    location: '',
+    user_id: Number(AppointmentIndex),
   };
 
   const [values, setValues] = useState(initialFormState);
@@ -36,7 +37,7 @@ const AddWalks = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(PuppyHealthApi.addWalks(values));
+    dispatch(PuppyHealthApi.addAppointments(values));
     console.log('added', values);
     setSubmitted(true);
   };
@@ -83,12 +84,26 @@ const AddWalks = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.distance}
-            label="How many km did you walk?"
-            name="distance"
-            type="number"
-            id="distance"
-            autoComplete="number"
+            value={values.location}
+            label="Where is the appointment?"
+            name="location"
+            type="string"
+            id="location"
+            autoComplete="string"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            onChange={handleChange}
+            value={values.appt_type}
+            label="What type of appointment is it?"
+            name="appt_type"
+            type="string"
+            id="appt_type"
+            autoComplete="string"
             autoFocus
           />
           <Button
@@ -102,17 +117,17 @@ const AddWalks = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav addLink="/addwalk" trackLink="/walks" />
+      <BottomNav addLink="/newappointments" trackLink="/appointments" />
     </div>
   );
 };
 
-AddWalks.propTypes = {
+AddAppointments.propTypes = {
   props: PropTypes.func,
 };
 
-AddWalks.defaultProps = {
+AddAppointments.defaultProps = {
   props: () => {},
 };
 
-export default AddWalks;
+export default AddAppointments;

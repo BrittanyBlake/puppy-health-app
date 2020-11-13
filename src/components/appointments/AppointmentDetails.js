@@ -10,69 +10,68 @@ import Paper from '@material-ui/core/Paper';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-import useStyles from './FoodDetail.styles';
-// import petfood from '../../assets/images/petfood.png';
+import useStyles from './AppointmentDetail.styles';
 
-import { ReactComponent as FoodImg } from '../../assets/images/pet-food.svg';
+import { ReactComponent as AppointmentImg } from '../../assets/images/appointment.svg';
 
-const FoodDetails = () => {
-  const { foodDetailsIndex } = useParams();
+const AppointmentDetails = () => {
+  const { appointmentDetailsIndex } = useParams();
   const dispatch = useDispatch();
-  const getFoodDetailsId = useSelector(state => state.food);
+  const getAppointmentDetailsId = useSelector(state => state.appointments);
   const formatDate = datetime => new Date(datetime).toDateString();
-  console.log('details', getFoodDetailsId);
+  console.log('details', getAppointmentDetailsId);
 
   const classes = useStyles();
 
   useEffect(() => {
-    const foodDetailsId = () => {
-      dispatch(PuppyHealthApi.getFoodsId(foodDetailsIndex));
+    const appointmentDetailsId = () => {
+      dispatch(PuppyHealthApi.getAppointmentsId(appointmentDetailsIndex));
     };
-    foodDetailsId();
+    appointmentDetailsId();
   }, []);
 
-  if (!getFoodDetailsId) {
+  if (!getAppointmentDetailsId) {
     console.log('nada');
     return null;
   }
 
   return (
-    console.log('data:', getFoodDetailsId),
+    console.log('data:', getAppointmentDetailsId),
     (
       <div>
         <Navbar />
         <h1 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
           {' '}
-          {formatDate(getFoodDetailsId.date)}
+          {formatDate(getAppointmentDetailsId.date)}
         </h1>
 
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
             <Grid container>
               <Grid container item xs={6}>
-                <FoodImg style={{ fill: '#42B5E8' }} height={200} width={200} />
+                <AppointmentImg
+                  style={{ fill: '#42B5E8' }}
+                  height={200}
+                  width={200}
+                />
               </Grid>
               <Grid container item xs={6}>
                 <Grid contianer item xs={12}>
-                  <small>BRAND</small>
-                  <p>
-                    {getFoodDetailsId.brand}
-                    {' '}
-                  </p>
+                  <small>LOCATION</small>
+                  <p>{getAppointmentDetailsId.location}</p>
                 </Grid>
                 <Grid contianer item xs={12}>
-                  <small>AMOUNT</small>
+                  <small>TYPE OF APPOINTMENT</small>
+                  {' '}
                   <p>
-                    {getFoodDetailsId.amount}
-                    {' '}
-                    grams
+                    {getAppointmentDetailsId.appt_type}
                     {' '}
                   </p>
                 </Grid>
                 <Grid contianer item xs={12}>
                   <small>TIME</small>
                   <p>
-                    {moment(getFoodDetailsId.time).format('LT')}
+                    {moment(getAppointmentDetailsId.time).format('LT')}
                     {' '}
                   </p>
                 </Grid>
@@ -81,21 +80,9 @@ const FoodDetails = () => {
           </Paper>
         </Container>
 
-        <BottomNav addLink="/addfood" trackLink="/food" />
+        <BottomNav addLink="/newappointments" trackLink="/appointments" />
       </div>
     )
   );
 };
-export default FoodDetails;
-
-FoodDetails.propTypes = {
-  // props: PropTypes.func,
-  // computedMatch: PropTypes.shape({
-  //   params: PropTypes.shape({
-  //     food: PropTypes.string.isRequired,
-  //   }),
-  // }),
-};
-FoodDetails.defaultProps = {
-  // props: () => {},
-};
+export default AppointmentDetails;

@@ -91,17 +91,17 @@ export const addWalks = walk => ({
   payload: walk,
 });
 
-export const getAppointments = (appointment) => ({
-  type: "GET_APPOINTMENTS",
+export const getAppointments = appointment => ({
+  type: 'GET_APPOINTMENTS',
   payload: appointment,
 });
 
-export const getAppointmentsId = (appointment) => ({
-  type: "GET_APPOINTMENTS_ID",
+export const getAppointmentsId = appointment => ({
+  type: 'GET_APPOINTMENTS_ID',
   payload: appointment,
 });
 
-export const addAppointments = (appointment) => ({
-  type: "ADD_APPOINTMENTS",
+export const addAppointments = appointment => ({
+  type: 'ADD_APPOINTMENTS',
   payload: appointment,
 });

@@ -368,8 +368,8 @@ const PuppyHealthApi = (() => {
     }
   };
 
-  const getAppointmentsId = (id) => async (dispatch) => {
-    const token = localStorage.getItem("token");
+  const getAppointmentsId = id => async dispatch => {
+    const token = localStorage.getItem('token');
     try {
       const data = await axios.get(`http://localhost:3000/api/v1/appointments/${id}`, {
         headers: {
@@ -377,13 +377,13 @@ const PuppyHealthApi = (() => {
         },
       });
       dispatch(reducerAction.getAppointmentsId(data.data));
-      console.log("data id:", data.data);
+      console.log('data id:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
   };
 
-  const addAppointments = walk => async dispatch => {
+  const addAppointments = appointment => async dispatch => {
     const token = localStorage.getItem('token');
     const config = {
       headers: {
@@ -392,10 +392,10 @@ const PuppyHealthApi = (() => {
     };
 
     const appointments = {
+      time: appointment.time,
+      appt_type: appointment.type,
       date: appointment.date,
       location: appointment.location,
-      time: appointment.time,
-      type: appointment.type,
       user_id: appointment.user_id,
     };
     try {

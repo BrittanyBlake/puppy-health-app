@@ -38,7 +38,7 @@ const AddFoods = ({ props }) => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addFoods(values));
-    console.log('added');
+    console.log('added', values);
     // history.push('/food');
   };
 
