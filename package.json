@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "chart.js": "^1.1.1",
+    "moment": "^2.29.1",
     "prop-type": "0.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
