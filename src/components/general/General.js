@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -32,12 +33,14 @@ const General = () => {
         <h1> GENERAL PAGE</h1>
         <div>
           {' '}
-          {allGeneralHealths.map(health => (
-            <div key={health.id}>
+          {allGeneralHealths.length > 0
+            && allGeneralHealths.map(health => (
+              <div key={health.id}>
+                <Link to={`/general/${health.id}`}>
+                  <TrackCard date={formatDate(health.date)} />
+                </Link>
 
-              <TrackCard date={formatDate(health.date)} />
-
-              {/*  <p>
+                {/*  <p>
                 Date:
                 {health.date}
               </p>
@@ -57,8 +60,8 @@ const General = () => {
                 Extra:
                 {health.extra}
             </p> */}
-            </div>
-          ))}
+              </div>
+            ))}
         </div>
         <BottomNav addLink="/addgeneralhealth" />
       </div>

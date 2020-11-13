@@ -11,6 +11,7 @@ import Treats from './components/treats/Treats';
 import Medication from './components/medication/Medication';
 import Food from './components/food/Food';
 import FoodDetails from './components/food/FoodDetails';
+import GeneralDetails from './components/general/GeneralDetails';
 import General from './components/general/General';
 import AddWalks from './components/walks/addWalks';
 import AddTreats from './components/treats/addTreats';
@@ -40,12 +41,11 @@ function App() {
         <Route exact path="/general" component={General}>
           {currentUser ? <General /> : <LoginForm />}
         </Route>
+        <Route exact path="/general/:generalDetailsIndex" component={GeneralDetails} />
         <Route exact path="/food" component={Food}>
           {currentUser ? <Food /> : <LoginForm />}
         </Route>
-        <Route exact path="/food/:foodDetailsIndex" component={FoodDetails}>
-          {/* currentUser ? <FoodDetails /> : <LoginForm /> */}
-        </Route>
+        <Route exact path="/food/:foodDetailsIndex" component={FoodDetails} />
         <Route exact path="/addwalk" component={AddWalks}>
           {currentUser ? <AddWalks /> : <LoginForm />}
         </Route>

@@ -22,7 +22,7 @@ const Food = () => {
   }, [dispatch]);
 
   if (!allFoods) {
-    console.log('nada');
+    console.log('nada', allFoods);
     return null;
   }
 
@@ -37,14 +37,14 @@ const Food = () => {
   // };
 
   return (
-    console.log('foods', allFoods.id),
+    console.log('foods', allFoods),
     (
       <div>
         <Navbar />
         <h1> FOOD PAGE</h1>
         <div>
           {' '}
-          {allFoods.map(food => (
+          {allFoods.length > 0 && allFoods.map(food => (
             <div key={food.id}>
               <Link to={`/food/${food.id}`}>
                 <TrackCard

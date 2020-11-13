@@ -7,6 +7,8 @@ const GeneralHealthsReducer = (state = [], action) => {
         ...state,
         generalHealth: action.payload,
       };
+    case 'GET_GENERAL_HEALTHS_ID':
+      return action.payload;
     default:
       return state;
   }
