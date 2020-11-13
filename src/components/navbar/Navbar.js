@@ -35,7 +35,7 @@ const Navbar = ({ props }) => {
           >
             <PetsIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" color="inherit" className={classes.title}>
             Puppy Health App
           </Typography>
           <Button onClick={Logout} color="inherit">

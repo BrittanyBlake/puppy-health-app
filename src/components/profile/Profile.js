@@ -3,6 +3,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 // import FastfoodIcon from '@material-ui/icons/Fastfood';
+import Container from '@material-ui/core/Container';
 import Navbar from '../navbar/Navbar';
 import CategoryCard from '../categoryCard/categoryCard';
 import useStyles from '../categoryCard/categoryCard.styles';
@@ -13,27 +14,28 @@ const Profile = ({ props }) => {
     <div>
       <Navbar />
       <h1> PROFILE PAGE</h1>
-      <Grid container className={classes.root} spacing={3}>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="Food" cardLink="/food" />
+      <Container maxWidth="lg">
+        <Grid container className={classes.root} spacing={3}>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="Food" cardLink="/food" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="Treats" cardLink="/treats" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="Walks" cardLink="/walks" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="Medications" cardLink="/medication" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="General Health" cardLink="/general" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} className={classes.control}>
+            <CategoryCard name="About your pup" cardLink="/about" />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="Treats" cardLink="/treats" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="Walks" cardLink="/walks" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="Medications" cardLink="/medication" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="General Health" cardLink="/general" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={6} className={classes.control}>
-          <CategoryCard name="About your pup" cardLink="/about" />
-        </Grid>
-      </Grid>
-
+      </Container>
     </div>
   );
 };
