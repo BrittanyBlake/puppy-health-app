@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 // import { Link } from 'react-router-dom';
+
+import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -28,40 +30,42 @@ const TrackCard = ({ props, date }) => {
   }, []);
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardContent>
-          <Grid container spacing={3}>
-            <Grid item xs>
-              <CircularProgress
-                variant="static"
-                value={progress}
-                style={{ color: '#97E493', fontWeight: 'bold' }}
-              />
-              {/* <DonutLargeRoundedIcon
+    <Container maxWidth="lg">
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardContent>
+            <Grid container spacing={3}>
+              <Grid item xs>
+                <CircularProgress
+                  variant="static"
+                  value={progress}
+                  style={{ color: '#97E493', fontWeight: 'bold' }}
+                />
+                {/* <DonutLargeRoundedIcon
                   style={{ color: '#42B5E8', fontWeight: 'bold' }}
                   fontSize="large"
                 /> */}
+              </Grid>
+              <Grid item xs>
+                <Typography
+                  className={classes.title}
+                  style={{ color: '#42B5E8', fontWeight: 'bold' }}
+                  gutterBottom
+                >
+                  {date}
+                </Typography>
+              </Grid>
+              <Grid item xs>
+                <ArrowForwardIosIcon
+                  className={classes.icon}
+                  style={{ color: 'grey', fontWeight: 'bold' }}
+                />
+              </Grid>
             </Grid>
-            <Grid item xs>
-              <Typography
-                className={classes.title}
-                style={{ color: '#42B5E8', fontWeight: 'bold' }}
-                gutterBottom
-              >
-                {date}
-              </Typography>
-            </Grid>
-            <Grid item xs>
-              <ArrowForwardIosIcon
-                className={classes.icon}
-                style={{ color: 'grey', fontWeight: 'bold' }}
-              />
-            </Grid>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Container>
   );
 };
 

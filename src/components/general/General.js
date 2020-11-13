@@ -30,7 +30,10 @@ const General = () => {
     (
       <div>
         <Navbar />
-        <h1> GENERAL PAGE</h1>
+        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+          {' '}
+          Let&apos;s see how your pup is doing...
+        </h2>
         <div>
           {' '}
           {allGeneralHealths.length > 0

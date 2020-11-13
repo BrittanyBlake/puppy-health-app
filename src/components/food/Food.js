@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-import Container from '@material-ui/core/Container';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -46,9 +45,9 @@ const Food = () => {
           Let&apos;s see how much your pup is eating...
         </h2>
         <div>
-          <Container maxWidth="xl">
-            {' '}
-            {allFoods.length > 0
+
+          {' '}
+          {allFoods.length > 0
               && allFoods.map(food => (
                 <div key={food.id}>
                   <Link to={`/food/${food.id}`}>
@@ -73,7 +72,6 @@ const Food = () => {
             <Delete /> */}
                 </div>
               ))}
-          </Container>
         </div>
         <BottomNav addLink="/addfood" trackLink="/food" />
       </div>

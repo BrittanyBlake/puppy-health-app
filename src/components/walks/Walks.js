@@ -32,7 +32,7 @@ const Walks = () => {
     (
       <div>
         <Navbar />
-        <h1> WALKS PAGE</h1>
+        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}> Is your pup getting enough exercise? </h2>
         {' '}
         {allWalks.length > 0
           && allWalks.map(walk => (

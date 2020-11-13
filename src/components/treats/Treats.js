@@ -31,7 +31,11 @@ const Treats = () => {
     (
       <div>
         <Navbar />
-        <h1> TREATS PAGE</h1>
+        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+          {' '}
+          How many treats are you feeding your pup?
+          {' '}
+        </h2>
         {' '}
         {allTreats.length > 0
           && allTreats.map(treat => (

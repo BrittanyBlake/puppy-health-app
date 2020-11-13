@@ -31,7 +31,11 @@ const Medication = () => {
     (
       <div>
         <Navbar />
-        <h1> MEDICATION PAGE</h1>
+        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+          {' '}
+          What Medicine is your pup taking?
+          {' '}
+        </h2>
         {' '}
         {allMedications.length > 0
           && allMedications.map(med => (
