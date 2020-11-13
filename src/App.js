@@ -8,6 +8,7 @@ import LoginForm from './components/login/LoginForm';
 import Profile from './components/profile/Profile';
 import Walks from './components/walks/Walks';
 import Treats from './components/treats/Treats';
+import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
 import Food from './components/food/Food';
 import FoodDetails from './components/food/FoodDetails';
@@ -35,13 +36,22 @@ function App() {
         <Route exact path="/treats" component={Treats}>
           {currentUser ? <Treats /> : <LoginForm />}
         </Route>
+        <Route
+          exact
+          path="/treats/:treatDetailsIndex"
+          component={TreatDetails}
+        />
         <Route exact path="/medication" component={Medication}>
           {currentUser ? <Medication /> : <LoginForm />}
         </Route>
         <Route exact path="/general" component={General}>
           {currentUser ? <General /> : <LoginForm />}
         </Route>
-        <Route exact path="/general/:generalDetailsIndex" component={GeneralDetails} />
+        <Route
+          exact
+          path="/general/:generalDetailsIndex"
+          component={GeneralDetails}
+        />
         <Route exact path="/food" component={Food}>
           {currentUser ? <Food /> : <LoginForm />}
         </Route>

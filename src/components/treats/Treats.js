@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -32,9 +33,12 @@ const Treats = () => {
         <Navbar />
         <h1> TREATS PAGE</h1>
         {' '}
-        {allTreats.map(treat => (
+        {allTreats.length > 0 && allTreats.map(treat => (
           <div key={treat.id}>
-            <TrackCard date={formatDate(treat.date)} />
+            <Link to={`/treats/${treat.id}`}>
+              <TrackCard date={formatDate(treat.date)} />
+            </Link>
+
             {/* <p>
               Amount:
               {treat.amount}

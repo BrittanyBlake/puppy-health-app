@@ -61,6 +61,11 @@ export const getTreats = treat => ({
   payload: treat,
 });
 
+export const getTreatsId = treat => ({
+  type: 'GET_TREATS_ID',
+  payload: treat,
+});
+
 export const addTreats = treat => ({
   type: 'ADD_TREATS',
   payload: treat,

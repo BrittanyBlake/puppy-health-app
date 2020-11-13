@@ -7,6 +7,8 @@ const TreatsReducer = (state = [], action) => {
         ...state,
         treat: action.payload,
       };
+    case 'GET_TREATS_ID':
+      return action.payload;
     default:
       return state;
   }
