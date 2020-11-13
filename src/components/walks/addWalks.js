@@ -101,7 +101,7 @@ const AddWalks = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav />
+      <BottomNav addLink="/addwalk" trackLink="/walks" />
     </div>
   );
 };

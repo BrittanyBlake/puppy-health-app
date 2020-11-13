@@ -50,7 +50,7 @@ const Walks = () => {
            </p> */}
           </div>
         ))}
-        <BottomNav addLink="/addwalk" />
+        <BottomNav addLink="/addwalk" trackLink="/walks" />
       </div>
     )
   );

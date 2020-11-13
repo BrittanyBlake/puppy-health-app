@@ -58,7 +58,7 @@ const Medication = () => {
           </p> */}
           </div>
         ))}
-        <BottomNav addLink="/addmedication" />
+        <BottomNav addLink="/addmedication" trackLink="medication" />
       </div>
     )
   );

@@ -129,7 +129,7 @@ const AddMedications = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav />
+      <BottomNav addLink="/addmedication" trackLink="medication" />
     </div>
   );
 };
