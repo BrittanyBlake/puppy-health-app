@@ -13,7 +13,11 @@ const Profile = ({ props }) => {
   return (
     <div>
       <Navbar />
-      <h1> PROFILE PAGE</h1>
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        {' '}
+        Choose A Category to Add Some Info About Your Pup
+        {' '}
+      </h2>
       <Container maxWidth="lg">
         <Grid container className={classes.root} spacing={3}>
           <Grid item xs={12} sm={6} md={6} className={classes.control}>
