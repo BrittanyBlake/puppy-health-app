@@ -60,7 +60,6 @@ const AddMedications = ({ props }) => {
             type="date"
             onChange={handleChange}
             value={values.date}
-            label="date"
             name="date"
             autoComplete="date"
             autoFocus
@@ -74,24 +73,11 @@ const AddMedications = ({ props }) => {
             type="time"
             onChange={handleChange}
             value={values.time}
-            label="time"
             name="time"
             autoComplete="time"
             autoFocus
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            onChange={handleChange}
-            value={values.dosage}
-            name="dosage"
-            type="string"
-            id="dosage"
-            autoComplete="string"
-            autoFocus
-          />
+
           <TextField
             variant="outlined"
             margin="normal"
@@ -99,6 +85,7 @@ const AddMedications = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.name}
+            label="What is the medication called?"
             name="name"
             type="string"
             id="name"
@@ -111,7 +98,22 @@ const AddMedications = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
+            value={values.dosage}
+            label="Dosage information"
+            name="dosage"
+            type="string"
+            id="dosage"
+            autoComplete="string"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            onChange={handleChange}
             value={values.use}
+            label="What is this medicine for?"
             name="use"
             type="string"
             id="use"

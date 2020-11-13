@@ -59,7 +59,6 @@ const AddWalks = ({ props }) => {
             type="time"
             onChange={handleChange}
             value={values.time}
-            label="time"
             name="time"
             autoComplete="time"
             autoFocus
@@ -84,6 +83,7 @@ const AddWalks = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.distance}
+            label="How many km did you walk?"
             name="distance"
             type="number"
             id="distance"

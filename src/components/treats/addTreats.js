@@ -58,7 +58,6 @@ const AddTreats = ({ props }) => {
             type="date"
             onChange={handleChange}
             value={values.date}
-            label="date"
             name="date"
             autoComplete="date"
             autoFocus
@@ -69,11 +68,12 @@ const AddTreats = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.amount}
-            name="amount"
-            type="number"
-            id="amount"
-            autoComplete="number"
+            value={values.treat_type}
+            label="What kind of treat was it?"
+            name="treat_type"
+            type="string"
+            id="treat_type"
+            autoComplete="string"
             autoFocus
           />
           <TextField
@@ -82,13 +82,15 @@ const AddTreats = ({ props }) => {
             required
             fullWidth
             onChange={handleChange}
-            value={values.treat_type}
-            name="treat_type"
-            type="string"
-            id="treat_type"
-            autoComplete="string"
+            value={values.amount}
+            label="How much did your pup eat?"
+            name="amount"
+            type="number"
+            id="amount"
+            autoComplete="number"
             autoFocus
           />
+
           <Button
             type="submit"
             fullWidth
