@@ -15,6 +15,7 @@ const PuppyHealthApi = (() => {
       localStorage.setItem('token', data.data.auth_token);
       dispatch(reducerAction.loginUser(data.user));
       console.log('signed up');
+      window.location = '/';
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }

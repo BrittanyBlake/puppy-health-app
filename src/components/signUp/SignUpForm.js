@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -12,14 +12,16 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
-import userPostFetch from '../../redux/actions/index';
+// import userPostFetch from '../../redux/actions/index';
 import Copyright from '../copyright/Copyright';
 import useStyles from './SignUpForm.styles';
+import PuppyHealthApi from '../../api/healthTracker';
 
 const SignUpForm = ({ props }) => {
   const classes = useStyles(props);
   const dispatch = useDispatch();
   // const history = useHistory();
+  const error = useSelector(state => state.errors);
 
   const initialFormState = {
     name: '',
@@ -37,9 +39,11 @@ const SignUpForm = ({ props }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(userPostFetch(values));
-    console.log('sign up');
-    setValues(initialFormState);
+    dispatch(PuppyHealthApi.signUpUser(values));
+    if (error) {
+      return error;
+    }
+    return true;
   };
 
   return (
