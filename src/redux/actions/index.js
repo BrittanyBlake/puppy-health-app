@@ -51,6 +51,11 @@ export const getMedications = medication => ({
   payload: medication,
 });
 
+export const getMedicationsId = medication => ({
+  type: 'GET_MEDICATIONS_ID',
+  payload: medication,
+});
+
 export const addMedications = medication => ({
   type: 'ADD_MEDICATIONS',
   payload: medication,

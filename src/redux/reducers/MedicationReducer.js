@@ -7,6 +7,8 @@ const MedicationsReducer = (state = [], action) => {
         ...state,
         medication: action.payload,
       };
+    case 'GET_MEDICATIONS_ID':
+      return action.payload;
     default:
       return state;
   }

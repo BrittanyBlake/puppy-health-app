@@ -20,6 +20,7 @@ import AddTreats from './components/treats/addTreats';
 import AddMedications from './components/medication/AddMedications';
 import AddGeneralHealths from './components/general/AddGeneralHealths';
 import AddFoods from './components/food/AddFoods';
+import MedicationDetails from './components/medication/MedicationDetails';
 // import Navbar from './components/navbar/Navbar';
 
 function App() {
@@ -46,6 +47,11 @@ function App() {
         <Route exact path="/medication" component={Medication}>
           {currentUser ? <Medication /> : <LoginForm />}
         </Route>
+        <Route
+          exact
+          path="/medication/:medicationDetailsIndex"
+          component={MedicationDetails}
+        />
         <Route exact path="/general" component={General}>
           {currentUser ? <General /> : <LoginForm />}
         </Route>
