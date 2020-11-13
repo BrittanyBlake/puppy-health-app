@@ -44,14 +44,13 @@ const Food = () => {
         <h1> FOOD PAGE</h1>
         <div>
           {' '}
-          {allFoods.length > 0 && allFoods.map(food => (
-            <div key={food.id}>
-              <Link to={`/food/${food.id}`}>
-                <TrackCard
-                  date={formatDate(food.date)}
-                />
-              </Link>
-              {/*  <p>
+          {allFoods.length > 0
+            && allFoods.map(food => (
+              <div key={food.id}>
+                <Link to={`/food/${food.id}`}>
+                  <TrackCard date={formatDate(food.date)} />
+                </Link>
+                {/*  <p>
                 Brand:
                 {food.brand}
               </p>
@@ -68,10 +67,10 @@ const Food = () => {
                 {food.date}
               </p>
             <Delete /> */}
-            </div>
-          ))}
+              </div>
+            ))}
         </div>
-        <BottomNav addLink="/addfood" />
+        <BottomNav addLink="/addfood" trackLink="/food" />
       </div>
     )
   );

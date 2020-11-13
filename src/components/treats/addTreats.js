@@ -100,7 +100,7 @@ const AddTreats = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav trackLink="/treats" />
+      <BottomNav addLink="/addtreat" trackLink="/treats" />
     </div>
   );
 };

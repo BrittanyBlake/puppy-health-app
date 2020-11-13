@@ -95,7 +95,7 @@ const MedicationDetails = () => {
           </div>
         ))}
         </div> */}
-        <BottomNav addLink="/addfood" trackLink="/food" />
+        <BottomNav addLink="/addmedication" trackLink="/medication" />
       </div>
     )
   );

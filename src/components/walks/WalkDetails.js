@@ -84,7 +84,7 @@ const WalkDetails = () => {
           </div>
         ))}
         </div> */}
-        <BottomNav addLink="/addtreat" trackLink="/treats" />
+        <BottomNav addLink="/addwalk" trackLink="/walks" />
       </div>
     )
   );

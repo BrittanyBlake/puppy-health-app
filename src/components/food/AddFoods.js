@@ -117,7 +117,7 @@ const AddFoods = ({ props }) => {
           </Button>
         </form>
       </div>
-      <BottomNav trackLink="/food" />
+      <BottomNav addLink="/addfood" trackLink="/food" />
     </div>
   );
 };
