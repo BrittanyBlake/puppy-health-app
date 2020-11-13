@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
+import Container from '@material-ui/core/Container';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
@@ -37,20 +38,23 @@ const Food = () => {
   // };
 
   return (
-    console.log('foods', allFoods),
+    console.log('user', allFoods),
     (
       <div>
         <Navbar />
-        <h1> FOOD PAGE</h1>
+        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+          Let&apos;s see how much your pup is eating...
+        </h2>
         <div>
-          {' '}
-          {allFoods.length > 0
-            && allFoods.map(food => (
-              <div key={food.id}>
-                <Link to={`/food/${food.id}`}>
-                  <TrackCard date={formatDate(food.date)} />
-                </Link>
-                {/*  <p>
+          <Container maxWidth="xl">
+            {' '}
+            {allFoods.length > 0
+              && allFoods.map(food => (
+                <div key={food.id}>
+                  <Link to={`/food/${food.id}`}>
+                    <TrackCard date={formatDate(food.date)} />
+                  </Link>
+                  {/*  <p>
                 Brand:
                 {food.brand}
               </p>
@@ -67,8 +71,9 @@ const Food = () => {
                 {food.date}
               </p>
             <Delete /> */}
-              </div>
-            ))}
+                </div>
+              ))}
+          </Container>
         </div>
         <BottomNav addLink="/addfood" trackLink="/food" />
       </div>

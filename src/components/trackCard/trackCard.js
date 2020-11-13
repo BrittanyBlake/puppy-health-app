@@ -54,6 +54,7 @@ const TrackCard = ({ props, date }) => {
             </Grid>
             <Grid item xs>
               <ArrowForwardIosIcon
+                className={classes.icon}
                 style={{ color: 'grey', fontWeight: 'bold' }}
               />
             </Grid>

@@ -50,6 +50,10 @@ const AddFoods = ({ props }) => {
   return (
     <div>
       <Navbar />
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        Just fed your pup? Track it here...
+      </h2>
+
       <div className={classes.root}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
