@@ -17,6 +17,7 @@ const FoodInfo = () => {
   }, []);
 
   if (!getFoodDetailsId) {
+    console.log('nada');
     return null;
   }
 

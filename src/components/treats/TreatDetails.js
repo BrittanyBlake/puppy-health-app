@@ -13,10 +13,12 @@ const TreatDetails = ({ getTreatDetailsId }) => {
   const formatDate = datetime => new Date(datetime).toDateString();
 
   if (!getTreatDetailsId) {
+    console.log('nada');
     return null;
   }
 
   return (
+    console.log('data:', getTreatDetailsId),
     (
       <div>
         <Navbar />

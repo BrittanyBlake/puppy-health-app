@@ -11,13 +11,17 @@ import { ReactComponent as FoodImg } from '../../assets/images/pet-food.svg';
 
 const FoodDetails = ({ getFoodDetailsId }) => {
   const formatDate = datetime => new Date(datetime).toDateString();
+  console.log('details', getFoodDetailsId);
+
   const classes = useStyles();
 
   if (!getFoodDetailsId) {
+    console.log('nada');
     return null;
   }
 
   return (
+    console.log('data:', getFoodDetailsId),
     (
       <div>
         <Navbar />

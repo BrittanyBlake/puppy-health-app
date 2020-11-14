@@ -14,6 +14,7 @@ const PuppyHealthApi = (() => {
       });
       localStorage.setItem('token', data.data.auth_token);
       dispatch(reducerAction.loginUser(data.user));
+      console.log('signed up');
       window.location = '/';
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
@@ -46,6 +47,7 @@ const PuppyHealthApi = (() => {
           },
         });
       dispatch(reducerAction.getFoods(data.data));
+      console.log('foods api', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -73,6 +75,7 @@ const PuppyHealthApi = (() => {
         config,
       );
       dispatch(reducerAction.addFoods(data.food));
+      console.log('add foods:', data.food);
       window.location = '/food';
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
@@ -108,6 +111,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getGeneralHealths(data.data));
+      console.log(data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -152,6 +156,7 @@ const PuppyHealthApi = (() => {
         config,
       );
       dispatch(reducerAction.addGeneralHealths(data.generalHealth));
+      console.log('add meds:', data.generalHealth);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -169,6 +174,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getMedications(data.data));
+      console.log('data:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -214,6 +220,7 @@ const PuppyHealthApi = (() => {
         config,
       );
       dispatch(reducerAction.addMedications(data.medication));
+      console.log('add meds:', data.medication);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -231,6 +238,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getTreats(data.data));
+      console.log('data:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -248,6 +256,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getTreatsId(data.data));
+      console.log('data id:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -274,6 +283,7 @@ const PuppyHealthApi = (() => {
         config,
       );
       dispatch(reducerAction.addTreats(data.treat));
+      console.log('add treat:', data.treat);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -291,6 +301,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getWalks(data.data));
+      console.log('data:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -308,6 +319,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getWalksId(data.data));
+      console.log('data id:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -332,6 +344,7 @@ const PuppyHealthApi = (() => {
         'http://localhost:3000/api/v1/walks', walks, config,
       );
       dispatch(reducerAction.addWalks(data.walk));
+      console.log('add data:', data.walk);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -349,6 +362,7 @@ const PuppyHealthApi = (() => {
         },
       );
       dispatch(reducerAction.getAppointments(data.data));
+      console.log('data:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -363,6 +377,7 @@ const PuppyHealthApi = (() => {
         },
       });
       dispatch(reducerAction.getAppointmentsId(data.data));
+      console.log('data id:', data.data);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }
@@ -388,6 +403,7 @@ const PuppyHealthApi = (() => {
         'http://localhost:3000/api/v1/appointments', appointments, config,
       );
       dispatch(reducerAction.addAppointments(data.appointments));
+      console.log('add data:', data.appointments);
     } catch (error) {
       dispatch(reducerAction.formErrors(error.response.data.message));
     }

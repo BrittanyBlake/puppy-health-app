@@ -31,11 +31,13 @@ const AddWalks = ({ props }) => {
       ...values,
       [name]: type === 'number' ? parseInt(value, 10) : value,
     });
+    console.log(values);
   };
 
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addWalks(values));
+    console.log('added', values);
     setSubmitted(true);
   };
 

@@ -35,6 +35,7 @@ const AddTreats = ({ props }) => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addTreats(values));
+    console.log('added');
     setSubmitted(true);
   };
 

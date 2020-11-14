@@ -28,6 +28,7 @@ import Walksinfo from './container/details/WalksInfo';
 
 function App() {
   const currentUser = localStorage.getItem('token');
+  console.log(currentUser);
   return (
     <div className="App">
       <Switch>
