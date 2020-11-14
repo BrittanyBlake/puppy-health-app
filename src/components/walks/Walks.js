@@ -32,29 +32,22 @@ const Walks = () => {
     (
       <div>
         <Navbar />
-        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}> Is your pup getting enough exercise? </h2>
-        {' '}
-        {allWalks.length > 0
-          && allWalks.map(walk => (
-            <div key={walk.id}>
-              <Link to={`/walks/${walk.id}`}>
-                <TrackCard date={formatDate(walk.date)} />
-              </Link>
-
-              {/* <p>
-              distance:
-              {walk.distance}
-            </p>
-            <p>
-              date:
-              {walk.date}
-            </p>
-            <p>
-              time:
-              {walk.time}
-           </p> */}
-            </div>
-          ))}
+        <div className="marginBottom">
+          <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+            {' '}
+            Is your pup getting enough exercise?
+            {' '}
+          </h2>
+          {' '}
+          {allWalks.length > 0
+            && allWalks.map(walk => (
+              <div key={walk.id}>
+                <Link to={`/walks/${walk.id}`}>
+                  <TrackCard date={formatDate(walk.date)} />
+                </Link>
+              </div>
+            ))}
+        </div>
         <BottomNav addLink="/addwalk" trackLink="/walks" />
       </div>
     )

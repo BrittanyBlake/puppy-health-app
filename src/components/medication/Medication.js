@@ -31,41 +31,23 @@ const Medication = () => {
     (
       <div>
         <Navbar />
-        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        <div className="marginBottom">
+          <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+            {' '}
+            What Medicine is your pup taking?
+            {' '}
+          </h2>
           {' '}
-          What Medicine is your pup taking?
-          {' '}
-        </h2>
-        {' '}
-        {allMedications.length > 0
-          && allMedications.map(med => (
-            <div key={med.id}>
-              <Link to={`/medication/${med.id}`}>
-                <TrackCard date={formatDate(med.date)} />
-              </Link>
+          {allMedications.length > 0
+            && allMedications.map(med => (
+              <div key={med.id}>
+                <Link to={`/medication/${med.id}`}>
+                  <TrackCard date={formatDate(med.date)} />
+                </Link>
+              </div>
+            ))}
+        </div>
 
-              {/* <p>
-              Date:
-              {med.date}
-            </p>
-            <p>
-              Dosage:
-              {med.dosage}
-            </p>
-            <p>
-              medicine name:
-              {med.name}
-            </p>
-            <p>
-              time:
-              {med.time}
-            </p>
-            <p>
-              What is it for?
-              {med.use}
-          </p> */}
-            </div>
-          ))}
         <BottomNav addLink="/addmedication" trackLink="medication" />
       </div>
     )

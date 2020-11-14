@@ -30,14 +30,16 @@ const Appointments = () => {
     console.log('appts', allAppointments),
     (
       <div>
+
         <Navbar />
-        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        <div className="marginBottom">
+          <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+            {' '}
+            Any important appointments coming up?
+            {' '}
+          </h2>
           {' '}
-          Any important appointments coming up?
-          {' '}
-        </h2>
-        {' '}
-        {allAppointments.length > 0
+          {allAppointments.length > 0
           && allAppointments.map(appt => (
             <div key={appt.id}>
               <Link to={`/appointments/${appt.id}`}>
@@ -45,6 +47,8 @@ const Appointments = () => {
               </Link>
             </div>
           ))}
+        </div>
+
         <BottomNav addLink="/newappointments" trackLink="/appointments" />
       </div>
     )

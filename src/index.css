@@ -30,3 +30,7 @@ small{
 .dogname {
   text-transform: capitalize;
 }
+
+.marginBottom{
+  margin-bottom: 100px;
+}

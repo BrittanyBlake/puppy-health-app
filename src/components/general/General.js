@@ -30,41 +30,25 @@ const General = () => {
     (
       <div>
         <Navbar />
-        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
-          {' '}
-          Let&apos;s see how your pup is doing...
-        </h2>
-        <div>
-          {' '}
-          {allGeneralHealths.length > 0
+
+        <div className="marginBottom">
+          <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+            {' '}
+            Let&apos;s see how your pup is doing...
+          </h2>
+          <div>
+            {' '}
+            {allGeneralHealths.length > 0
             && allGeneralHealths.map(health => (
               <div key={health.id}>
                 <Link to={`/general/${health.id}`}>
                   <TrackCard date={formatDate(health.date)} />
                 </Link>
 
-                {/*  <p>
-                Date:
-                {health.date}
-              </p>
-              <p>
-                Weight:
-                {health.weight}
-              </p>
-              <p>
-                energy level:
-                {health.energy_level}
-              </p>
-              <p>
-                hunger level:
-                {health.hunger_level}
-              </p>
-              <p>
-                Extra:
-                {health.extra}
-            </p> */}
               </div>
             ))}
+          </div>
+
         </div>
         <BottomNav addLink="/addgeneralhealth" trackLink="/general" />
       </div>

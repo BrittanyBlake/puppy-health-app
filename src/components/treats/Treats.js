@@ -31,33 +31,23 @@ const Treats = () => {
     (
       <div>
         <Navbar />
-        <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        <div className="marginBottom">
+          <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+            {' '}
+            How many treats are you feeding your pup?
+            {' '}
+          </h2>
           {' '}
-          How many treats are you feeding your pup?
-          {' '}
-        </h2>
-        {' '}
-        {allTreats.length > 0
-          && allTreats.map(treat => (
-            <div key={treat.id}>
-              <Link to={`/treats/${treat.id}`}>
-                <TrackCard date={formatDate(treat.date)} />
-              </Link>
+          {allTreats.length > 0
+            && allTreats.map(treat => (
+              <div key={treat.id}>
+                <Link to={`/treats/${treat.id}`}>
+                  <TrackCard date={formatDate(treat.date)} />
+                </Link>
+              </div>
+            ))}
+        </div>
 
-              {/* <p>
-              Amount:
-              {treat.amount}
-            </p>
-            <p>
-              date:
-              {treat.date}
-            </p>
-            <p>
-              treat name:
-              {treat.treat_type}
-           </p> */}
-            </div>
-          ))}
         <BottomNav addLink="/addtreat" trackLink="/treats" />
       </div>
     )
