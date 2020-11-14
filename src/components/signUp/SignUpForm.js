@@ -126,7 +126,7 @@ const SignUpForm = ({ props }) => {
               Sign Up
             </Button>
             <Grid item>
-              <Link href="#/" variant="body2" style={{ color: '#ffffff' }}>
+              <Link href="/login" variant="body2" style={{ color: '#ffffff' }}>
                 Already have an account? Sign In
               </Link>
             </Grid>
