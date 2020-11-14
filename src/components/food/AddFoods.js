@@ -93,7 +93,7 @@ const AddFoods = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.brand}
-            label="What Food Brand do you feed your pup?"
+            label="Food Brand"
             name="brand"
             type="string"
             id="brand"
@@ -107,7 +107,7 @@ const AddFoods = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.amount}
-            label="How much grams does your pup get?"
+            label="Amount in grams"
             name="amount"
             type="number"
             id="amount"

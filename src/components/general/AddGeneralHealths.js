@@ -87,7 +87,7 @@ const AddGeneralHealths = ({ props }) => {
             type="number"
             onChange={handleChange}
             value={values.weight}
-            label="How much does your pup weigh?"
+            label="Pup's weight"
             name="weight"
             autoComplete="number"
             autoFocus
@@ -99,7 +99,7 @@ const AddGeneralHealths = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.energy_level}
-            label="How energetic is your pup today?"
+            label="Energy level"
             name="energy_level"
             type="string"
             id="energy_level"
@@ -114,7 +114,7 @@ const AddGeneralHealths = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.hunger_level}
-            label="How hungry is your pup today?"
+            label="Hunger level"
             name="hunger_level"
             type="string"
             id="hunger_level"

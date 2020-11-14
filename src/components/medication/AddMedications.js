@@ -49,6 +49,9 @@ const AddMedications = ({ props }) => {
   return (
     <div>
       <Navbar />
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        Is your pup taking any new medication? Track it here...
+      </h2>
       <div className={classes.root}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
@@ -85,7 +88,7 @@ const AddMedications = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.name}
-            label="What is the medication called?"
+            label="Name of medication"
             name="name"
             type="string"
             id="name"
@@ -113,7 +116,7 @@ const AddMedications = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.use}
-            label="What is this medicine for?"
+            label="What is it for?"
             name="use"
             type="string"
             id="use"

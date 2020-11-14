@@ -49,6 +49,9 @@ const AddWalks = ({ props }) => {
   return (
     <div>
       <Navbar />
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        Just took your pup on a walk? Track it here...
+      </h2>
       <div className={classes.root}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
@@ -84,7 +87,7 @@ const AddWalks = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.distance}
-            label="How many km did you walk?"
+            label="Distance in km"
             name="distance"
             type="number"
             id="distance"

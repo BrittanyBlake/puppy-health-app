@@ -47,6 +47,9 @@ const AddTreats = ({ props }) => {
   return (
     <div>
       <Navbar />
+      <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
+        Just gave your pup a snack? Track it here...
+      </h2>
       <div className={classes.root}>
         <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
@@ -69,7 +72,7 @@ const AddTreats = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.treat_type}
-            label="What kind of treat was it?"
+            label="What kind of treat?"
             name="treat_type"
             type="string"
             id="treat_type"
@@ -83,7 +86,7 @@ const AddTreats = ({ props }) => {
             fullWidth
             onChange={handleChange}
             value={values.amount}
-            label="How much did your pup eat?"
+            label="How many?"
             name="amount"
             type="number"
             id="amount"
