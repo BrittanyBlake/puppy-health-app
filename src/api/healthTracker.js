@@ -4,7 +4,7 @@ import * as reducerAction from '../redux/actions/index';
 const PuppyHealthApi = (() => {
   const signUpUser = user => async dispatch => {
     try {
-      const data = await axios.post('http://localhost:3000/signup', {
+      const data = await axios.post('https://young-scrubland-44144.herokuapp.com/signup', {
         users: {
           email: user.email,
           name: user.name,
@@ -23,7 +23,7 @@ const PuppyHealthApi = (() => {
 
   const loginUser = user => async dispatch => {
     try {
-      const data = await axios.post('http://localhost:3000/auth/login', {
+      const data = await axios.post('https://young-scrubland-44144.herokuapp.com/auth/login', {
         user: {
           email: user.email,
           password: user.password,
@@ -40,7 +40,7 @@ const PuppyHealthApi = (() => {
   const getFoods = () => async dispatch => {
     const token = localStorage.getItem('token');
     try {
-      const data = await axios.get('http://localhost:3000/api/v1/foods',
+      const data = await axios.get('https://young-scrubland-44144.herokuapp.com/api/v1/foods',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/foods',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/foods',
         foods,
         config,
       );
@@ -86,7 +86,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        `http://localhost:3000/api/v1/foods/${id}`,
+        `https://young-scrubland-44144.herokuapp.com/api/v1/foods/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        'http://localhost:3000/api/v1/general_healths',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/general_healths',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -121,7 +121,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        `http://localhost:3000/api/v1/general_healths/${id}`,
+        `https://young-scrubland-44144.herokuapp.com/api/v1/general_healths/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -151,7 +151,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/general_healths',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/general_healths',
         generalHealths,
         config,
       );
@@ -166,7 +166,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        'http://localhost:3000/api/v1/medications',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -184,7 +184,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        `http://localhost:3000/api/v1/medications/${id}`,
+        `https://young-scrubland-44144.herokuapp.com/api/v1/medications/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -215,7 +215,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/medications',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
         medications,
         config,
       );
@@ -230,7 +230,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        'http://localhost:3000/api/v1/treats',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -248,7 +248,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        `http://localhost:3000/api/v1/treats/${id}`,
+        `https://young-scrubland-44144.herokuapp.com/api/v1/treats/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -278,7 +278,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/treats',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
         treats,
         config,
       );
@@ -293,7 +293,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        'http://localhost:3000/api/v1/walks',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/walks',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -311,7 +311,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        `http://localhost:3000/api/v1/walks/${id}`,
+        `https://young-scrubland-44144.herokuapp.com/api/v1/walks/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -341,7 +341,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/walks', walks, config,
+        'https://young-scrubland-44144.herokuapp.com/api/v1/walks', walks, config,
       );
       dispatch(reducerAction.addWalks(data.walk));
       console.log('add data:', data.walk);
@@ -354,7 +354,7 @@ const PuppyHealthApi = (() => {
     const token = localStorage.getItem('token');
     try {
       const data = await axios.get(
-        'http://localhost:3000/api/v1/appointments',
+        'https://young-scrubland-44144.herokuapp.com/api/v1/appointments',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -371,7 +371,7 @@ const PuppyHealthApi = (() => {
   const getAppointmentsId = id => async dispatch => {
     const token = localStorage.getItem('token');
     try {
-      const data = await axios.get(`http://localhost:3000/api/v1/appointments/${id}`, {
+      const data = await axios.get(`https://young-scrubland-44144.herokuapp.com/api/v1/appointments/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -400,7 +400,7 @@ const PuppyHealthApi = (() => {
     };
     try {
       const data = await axios.post(
-        'http://localhost:3000/api/v1/appointments', appointments, config,
+        'https://young-scrubland-44144.herokuapp.com/api/v1/appointments', appointments, config,
       );
       dispatch(reducerAction.addAppointments(data.appointments));
       console.log('add data:', data.appointments);
