@@ -42,7 +42,6 @@ const AddMedications = ({ props }) => {
   };
 
   if (isSubmited) {
-    // redirect to the tracking page when implemented
     return <Redirect to="/" />;
   }
 
