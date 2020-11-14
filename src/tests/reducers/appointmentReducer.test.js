@@ -1,14 +1,14 @@
-import AppointmentReducer from '../../redux/reducers/AppointmentReducer'
-import * as reducerAction from "../../redux/actions/index";
+import AppointmentReducer from '../../redux/reducers/AppointmentReducer';
+import * as reducerAction from '../../redux/actions/index';
 
-describe("get appointments", () => {
+describe('get appointments', () => {
   const initialState = [];
 
-  it("should return the initial state", () => {
+  it('should return the initial state', () => {
     expect(
       AppointmentReducer(undefined, {
         type: reducerAction.getAppointments,
-      })
+      }),
     ).toEqual(initialState);
   });
 });
