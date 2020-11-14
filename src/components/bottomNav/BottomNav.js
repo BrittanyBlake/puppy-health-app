@@ -39,14 +39,12 @@ const BottomNavbar = ({ props, addLink, trackLink }) => {
           style={{ color: 'white' }}
         />
       </Link>
-      <Link to="/calendar">
-        <BottomNavigationAction
-          label="Progress"
-          value="progress"
-          icon={<PieChartIcon />}
-          style={{ color: 'white' }}
-        />
-      </Link>
+      <BottomNavigationAction
+        label="Progress"
+        value="progress"
+        icon={<PieChartIcon />}
+        style={{ color: 'white' }}
+      />
 
       <Link to="/">
         <BottomNavigationAction
