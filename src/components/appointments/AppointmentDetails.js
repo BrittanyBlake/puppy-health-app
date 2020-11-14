@@ -61,14 +61,6 @@ const AppointmentDetails = () => {
                   <p>{getAppointmentDetailsId.location}</p>
                 </Grid>
                 <Grid contianer item xs={12}>
-                  <small>TYPE OF APPOINTMENT</small>
-                  {' '}
-                  <p>
-                    {getAppointmentDetailsId.appt_type}
-                    {' '}
-                  </p>
-                </Grid>
-                <Grid contianer item xs={12}>
                   <small>TIME</small>
                   <p>
                     {moment(getAppointmentDetailsId.time).format('LT')}
