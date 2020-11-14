@@ -1,36 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './GeneralDetail.styles';
 import { ReactComponent as HealthImg } from '../../assets/images/heartbeat.svg';
 
-const GeneralDetails = () => {
+const GeneralDetails = ({ getGeneralDetailsId }) => {
   const classes = useStyles();
-  const { generalDetailsIndex } = useParams();
-  const dispatch = useDispatch();
-  const getGeneralDetailsId = useSelector(state => state.generalHealths);
+
   const formatDate = datetime => new Date(datetime).toDateString();
 
-  useEffect(() => {
-    const generalDetailsId = () => {
-      dispatch(PuppyHealthApi.getGeneralHealthsId(generalDetailsIndex));
-    };
-    generalDetailsId();
-  }, []);
-
   if (!getGeneralDetailsId) {
-    console.log('nada');
     return null;
   }
 
   return (
-    console.log('data:', getGeneralDetailsId),
+
     (
       <div>
         <Navbar />
@@ -91,3 +79,17 @@ const GeneralDetails = () => {
   );
 };
 export default GeneralDetails;
+
+GeneralDetails.propTypes = {
+  getGeneralDetailsId: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    energy_level: PropTypes.string.isRequired,
+    hunger_level: PropTypes.string.isRequired,
+    extra: PropTypes.string,
+    weight: PropTypes.number.isRequired,
+    user: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+};
+GeneralDetails.defaultProps = {
+  getGeneralDetailsId: {},
+};

@@ -9,8 +9,6 @@ import Walks from './components/walks/Walks';
 import WalkDetails from './components/walks/WalkDetails';
 import Medication from './components/medication/Medication';
 import FoodList from './container/track/FoodList';
-import GeneralDetails from './components/general/GeneralDetails';
-import General from './components/general/General';
 import AddWalks from './components/walks/addWalks';
 import AddTreats from './components/treats/addTreats';
 import AddMedications from './components/medication/AddMedications';
@@ -19,12 +17,14 @@ import AddFoods from './components/food/AddFoods';
 import MedicationDetails from './components/medication/MedicationDetails';
 import SignUpForm from './components/signUp/SignUpForm';
 import Calendar from './components/calendar/Calendar';
-import AppointmentDetails from './components/appointments/AppointmentDetails';
-import Appointments from './components/appointments/Appointments';
 import AddAppointments from './components/appointments/AddAppointments';
 import FoodInfo from './container/details/FoodInfo';
 import TreatsList from './container/track/TreatsList';
 import TreatsInfo from './container/details/TreatsInfo';
+import AppointmentsList from './container/track/AppointmentsList';
+import AppointmentsInfo from './container/details/AppointmentsInfo';
+import GeneralHealthList from './container/track/GeneralHealthList';
+import GeneralHealthInfo from './container/details/GeneralHealthInfo';
 
 function App() {
   const currentUser = localStorage.getItem('token');
@@ -39,22 +39,18 @@ function App() {
           {currentUser ? <Walks /> : <LoginForm />}
         </Route>
         <Route exact path="/walks/:walkDetailsIndex" component={WalkDetails} />
-        <Route exact path="/appointments" component={Appointments}>
-          {currentUser ? <Appointments /> : <LoginForm />}
+        <Route exact path="/appointments" component={AppointmentsList}>
+          {currentUser ? <AppointmentsList /> : <LoginForm />}
         </Route>
         <Route
           exact
           path="/appointments/:appointmentDetailsIndex"
-          component={AppointmentDetails}
+          component={AppointmentsInfo}
         />
         <Route exact path="/treats" component={TreatsList}>
           {currentUser ? <TreatsList /> : <LoginForm />}
         </Route>
-        <Route
-          exact
-          path="/treats/:treatDetailsIndex"
-          component={TreatsInfo}
-        />
+        <Route exact path="/treats/:treatDetailsIndex" component={TreatsInfo} />
         <Route exact path="/medication" component={Medication}>
           {currentUser ? <Medication /> : <LoginForm />}
         </Route>
@@ -63,13 +59,13 @@ function App() {
           path="/medication/:medicationDetailsIndex"
           component={MedicationDetails}
         />
-        <Route exact path="/general" component={General}>
-          {currentUser ? <General /> : <LoginForm />}
+        <Route exact path="/general" component={GeneralHealthList}>
+          {currentUser ? <GeneralHealthList /> : <LoginForm />}
         </Route>
         <Route
           exact
           path="/general/:generalDetailsIndex"
-          component={GeneralDetails}
+          component={GeneralHealthInfo}
         />
         <Route exact path="/food" component={FoodList}>
           {currentUser ? <FoodList /> : <LoginForm />}
