@@ -25,7 +25,6 @@ const AddGeneralHealths = ({ props }) => {
 
   const [values, setValues] = useState(initialFormState);
 
-
   const handleChange = event => {
     const { name, value, type } = event.target;
     setValues({

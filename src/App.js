@@ -10,7 +10,7 @@ import WalkDetails from './components/walks/WalkDetails';
 import Treats from './components/treats/Treats';
 import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
-import Food from './components/food/Food';
+import FoodList from './container/food/FoodList';
 import FoodDetails from './components/food/FoodDetails';
 import GeneralDetails from './components/general/GeneralDetails';
 import General from './components/general/General';
@@ -74,8 +74,8 @@ function App() {
           path="/general/:generalDetailsIndex"
           component={GeneralDetails}
         />
-        <Route exact path="/food" component={Food}>
-          {currentUser ? <Food /> : <LoginForm />}
+        <Route exact path="/food" component={FoodList}>
+          {currentUser ? <FoodList /> : <LoginForm />}
         </Route>
         <Route exact path="/food/:foodDetailsIndex" component={FoodDetails} />
         <Route exact path="/addwalk" component={AddWalks}>
