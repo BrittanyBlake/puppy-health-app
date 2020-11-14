@@ -35,7 +35,6 @@ const AddAppointments = ({ props }) => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addAppointments(values));
-    console.log('added', values);
     setSubmitted(true);
   };
 

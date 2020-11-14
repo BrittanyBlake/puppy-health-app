@@ -7,14 +7,12 @@ import TrackCard from '../trackCard/trackCard';
 
 const Treats = ({ allTreats }) => {
   if (!allTreats) {
-    console.log('nada');
     return null;
   }
 
   const formatDate = datetime => new Date(datetime).toDateString();
 
   return (
-    console.log('treats', allTreats),
     (
       <div>
         <Navbar />

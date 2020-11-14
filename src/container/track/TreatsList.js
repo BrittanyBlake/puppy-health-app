@@ -7,18 +7,15 @@ import PuppyHealthApi from '../../api/healthTracker';
 const TreatsList = () => {
   const dispatch = useDispatch();
   const allTreats = useSelector(state => state.treats);
-  console.log('treat state', allTreats);
 
   useEffect(() => {
     const getTreat = () => {
-      console.log('hi');
       dispatch(PuppyHealthApi.getTreats());
     };
     getTreat();
   }, [dispatch]);
 
   if (!allTreats) {
-    console.log('nada');
     return null;
   }
 
