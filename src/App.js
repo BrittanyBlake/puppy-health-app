@@ -3,7 +3,6 @@ import './App.css';
 import {
   Switch, Route,
 } from 'react-router-dom';
-// import SignUpForm from './components/signUp/SignUpForm';
 import LoginForm from './components/login/LoginForm';
 import Profile from './components/profile/Profile';
 import Walks from './components/walks/Walks';
@@ -26,7 +25,6 @@ import Calendar from './components/calendar/Calendar';
 import AppointmentDetails from './components/appointments/AppointmentDetails';
 import Appointments from './components/appointments/Appointments';
 import AddAppointments from './components/appointments/AddAppointments';
-// import Navbar from './components/navbar/Navbar';
 
 function App() {
   const currentUser = localStorage.getItem('token');

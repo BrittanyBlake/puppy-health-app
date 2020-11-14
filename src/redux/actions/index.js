@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 export const loginUser = userObj => ({
   type: 'LOGIN_USER',
   payload: userObj,
@@ -28,7 +26,6 @@ export const addFoods = food => ({
 export const getFoodsId = food => ({
   type: 'GET_FOODS_ID',
   payload: food,
-  // foodId: food,
 });
 
 export const getGeneralHealths = generalHealth => ({
