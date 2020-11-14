@@ -1,33 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import PropTypes from 'prop-types';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import TrackCard from '../trackCard/trackCard';
 
-const Medication = () => {
-  const dispatch = useDispatch();
-  const allMedications = useSelector(state => state.medications);
-  console.log('medication state', allMedications);
-
-  useEffect(() => {
-    const getMedication = () => {
-      console.log('hi');
-      dispatch(PuppyHealthApi.getMedications());
-    };
-    getMedication();
-  }, [dispatch]);
-
+const Medication = ({ allMedications }) => {
   if (!allMedications) {
-    console.log('nada');
     return null;
   }
 
   const formatDate = datetime => new Date(datetime).toDateString();
 
   return (
-    console.log('medications', allMedications),
+
     (
       <div>
         <Navbar />
@@ -55,3 +41,13 @@ const Medication = () => {
 };
 
 export default Medication;
+
+Medication.propTypes = {
+  allMedications: PropTypes.shape({
+    length: PropTypes.number.isRequired,
+    map: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
+Medication.defaultProps = {
+  allMedications: {},
+};
