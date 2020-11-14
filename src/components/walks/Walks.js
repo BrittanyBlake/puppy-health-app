@@ -1,33 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import PropTypes from 'prop-types';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import TrackCard from '../trackCard/trackCard';
 
-const Walks = () => {
-  const dispatch = useDispatch();
-  const allWalks = useSelector(state => state.walks);
-  console.log('walk state', allWalks);
-
-  useEffect(() => {
-    const getWalk = () => {
-      console.log('hi');
-      dispatch(PuppyHealthApi.getWalks());
-    };
-    getWalk();
-  }, [dispatch]);
-
+const Walks = ({ allWalks }) => {
   if (!allWalks) {
-    console.log('nada');
     return null;
   }
 
   const formatDate = datetime => new Date(datetime).toDateString();
 
   return (
-    console.log('walks', allWalks),
     (
       <div>
         <Navbar />
@@ -54,3 +39,13 @@ const Walks = () => {
 };
 
 export default Walks;
+
+Walks.propTypes = {
+  allWalks: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
+Walks.defaultProps = {
+  allWalks: {},
+};

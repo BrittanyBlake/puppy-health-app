@@ -1,37 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './WalkDetail.styles';
 import { ReactComponent as DogWalking } from '../../assets/images/dog-walking.svg';
 
-const WalkDetails = () => {
+const WalkDetails = ({ getWalkDetailsId }) => {
   const classes = useStyles();
-  const { walkDetailsIndex } = useParams();
-  const dispatch = useDispatch();
-  const getWalkDetailsId = useSelector(state => state.walks);
+
   const formatDate = datetime => new Date(datetime).toDateString();
 
-  useEffect(() => {
-    const walkDetailsId = () => {
-      dispatch(PuppyHealthApi.getWalksId(walkDetailsIndex));
-    };
-    walkDetailsId();
-  }, []);
-
   if (!getWalkDetailsId) {
-    console.log('nada');
     return null;
   }
 
   return (
-    console.log('data:', getWalkDetailsId),
     (
       <div>
         <Navbar />
@@ -83,3 +70,14 @@ const WalkDetails = () => {
   );
 };
 export default WalkDetails;
+WalkDetails.propTypes = {
+  getWalkDetailsId: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    distance: PropTypes.string.isRequired,
+    user: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+};
+WalkDetails.defaultProps = {
+  getWalkDetailsId: [],
+};
