@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-// import { addWalks } from '../../redux/actions';
 import TrackCard from '../trackCard/trackCard';
 
 const Walks = () => {

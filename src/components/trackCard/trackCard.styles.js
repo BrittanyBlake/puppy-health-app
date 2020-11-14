@@ -18,10 +18,6 @@ const useStyles = makeStyles({
     paddingTop: '0.5em',
   },
   icon: {
-    // fontSize: 16,
-    // color: '#1c85d0',
-    // fontWeight: 'bold',
-    // textAlign: 'center',
     paddingTop: '0.3em',
   },
   pos: {

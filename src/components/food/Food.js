@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
@@ -26,14 +24,6 @@ const Food = () => {
   }
 
   const formatDate = datetime => new Date(datetime).toDateString();
-  // const handleClick = e => {
-  //   e.preventDefault();
-  //   console.log('deleted');
-  // };
-
-  // const handleClick = () => {
-  //   console.log('clicked');
-  // };
 
   return (
     console.log('user', allFoods),
@@ -62,11 +52,5 @@ const Food = () => {
     )
   );
 };
-// Food.propTypes = {
-//   props: PropTypes.func,
-// };
 
-// Food.defaultProps = {
-//   props: () => {},
-// };
 export default Food;

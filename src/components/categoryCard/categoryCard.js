@@ -6,7 +6,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './categoryCard.styles';
-// import FastfoodIcon from "@material-ui/icons/Fastfood";
 
 const CategoryCard = ({ props, name, cardLink }) => {
   const classes = useStyles(props);
@@ -35,7 +34,6 @@ CategoryCard.propTypes = {
   props: PropTypes.func,
   name: PropTypes.string.isRequired,
   cardLink: PropTypes.string.isRequired,
-  //   id: PropTypes.number.isRequired,
 };
 
 CategoryCard.defaultProps = {

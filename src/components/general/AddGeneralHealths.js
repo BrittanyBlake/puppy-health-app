@@ -24,8 +24,7 @@ const AddGeneralHealths = ({ props }) => {
   };
 
   const [values, setValues] = useState(initialFormState);
-  // const [energyLevel, setEnergyLevel] = useState('');
-  // const [hungerLevel, setHungerLevel] = useState('');
+
 
   const handleChange = event => {
     const { name, value, type } = event.target;
@@ -35,14 +34,6 @@ const AddGeneralHealths = ({ props }) => {
     });
   };
 
-  // const handleEnergySelection = e => {
-  //   setEnergyLevel(e.target.value);
-  // };
-
-  // const handleHungerSelection = e => {
-  //   setHungerLevel(e.target.value);
-  // };
-
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addGeneralHealths(values));
@@ -51,7 +42,6 @@ const AddGeneralHealths = ({ props }) => {
   };
 
   if (isSubmited) {
-    // redirect to the tracking page when implemented
     return <Redirect to="/" />;
   }
 
@@ -73,7 +63,6 @@ const AddGeneralHealths = ({ props }) => {
             type="date"
             onChange={handleChange}
             value={values.date}
-            // label="date"
             name="date"
             autoComplete="date"
             autoFocus

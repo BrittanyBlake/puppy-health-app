@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -14,7 +13,6 @@ const AddFoods = ({ props }) => {
   const classes = useStyles(props);
   const { FoodIndex } = useParams();
   const dispatch = useDispatch();
-  // const history = useHistory();
 
   const initialFormState = {
     brand: '',
@@ -39,12 +37,10 @@ const AddFoods = ({ props }) => {
     event.preventDefault();
     dispatch(PuppyHealthApi.addFoods(values));
     console.log('added', values);
-    // history.push('/food');
     setSubmitted(true);
   };
 
   if (isSubmited) {
-    // redirect to the tracking page when implemented
     return <Redirect to="/" />;
   }
 
@@ -65,9 +61,7 @@ const AddFoods = ({ props }) => {
             id="date"
             type="date"
             onChange={handleChange}
-            // defaultValue="2020-05-24"
             value={values.date}
-            // label="date"
             name="date"
             autoComplete="date"
             autoFocus
@@ -81,7 +75,6 @@ const AddFoods = ({ props }) => {
             type="time"
             onChange={handleChange}
             value={values.time}
-            // label="time"
             name="time"
             autoComplete="time"
             autoFocus

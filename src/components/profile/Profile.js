@@ -1,8 +1,6 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
-// import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Container from '@material-ui/core/Container';
 import Navbar from '../navbar/Navbar';
 import CategoryCard from '../categoryCard/categoryCard';
@@ -46,12 +44,10 @@ const Profile = ({ props }) => {
 
 Profile.propTypes = {
   props: PropTypes.func,
-  // cardLink: PropTypes.string,
 };
 
 Profile.defaultProps = {
   props: () => {},
-  // cardLink: '',
 };
 
 export default Profile;

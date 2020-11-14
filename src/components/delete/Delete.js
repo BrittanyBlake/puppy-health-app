@@ -17,12 +17,4 @@ const Delete = () => {
   );
 };
 
-// Delete.propTypes = {
-//   props: PropTypes.func,
-// };
-
-// Delete.defaultProps = {
-//   props: () => {},
-// };
-
 export default Delete;

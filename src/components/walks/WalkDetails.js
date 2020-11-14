@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import moment from 'moment';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -11,7 +9,6 @@ import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './WalkDetail.styles';
-// import petfood from '../../assets/images/petfood.png';
 import { ReactComponent as DogWalking } from '../../assets/images/dog-walking.svg';
 
 const WalkDetails = () => {
@@ -86,15 +83,3 @@ const WalkDetails = () => {
   );
 };
 export default WalkDetails;
-
-WalkDetails.propTypes = {
-  // props: PropTypes.func,
-  // computedMatch: PropTypes.shape({
-  //   params: PropTypes.shape({
-  //     food: PropTypes.string.isRequired,
-  //   }),
-  // }),
-};
-WalkDetails.defaultProps = {
-  // props: () => {},
-};

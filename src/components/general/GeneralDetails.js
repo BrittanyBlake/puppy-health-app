@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-// import moment from 'moment';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
-// import petfood from '../../assets/images/petfood.png';
 import useStyles from './GeneralDetail.styles';
 import { ReactComponent as HealthImg } from '../../assets/images/heartbeat.svg';
 
@@ -95,15 +91,3 @@ const GeneralDetails = () => {
   );
 };
 export default GeneralDetails;
-
-GeneralDetails.propTypes = {
-  // props: PropTypes.func,
-  // computedMatch: PropTypes.shape({
-  //   params: PropTypes.shape({
-  //     food: PropTypes.string.isRequired,
-  //   }),
-  // }),
-};
-GeneralDetails.defaultProps = {
-  // props: () => {},
-};
