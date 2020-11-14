@@ -1,31 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './FoodDetail.styles';
 import { ReactComponent as FoodImg } from '../../assets/images/pet-food.svg';
 
-const FoodDetails = () => {
-  const { foodDetailsIndex } = useParams();
-  const dispatch = useDispatch();
-  const getFoodDetailsId = useSelector(state => state.food);
+const FoodDetails = ({ getFoodDetailsId }) => {
   const formatDate = datetime => new Date(datetime).toDateString();
   console.log('details', getFoodDetailsId);
 
   const classes = useStyles();
-
-  useEffect(() => {
-    const foodDetailsId = () => {
-      dispatch(PuppyHealthApi.getFoodsId(foodDetailsIndex));
-    };
-    foodDetailsId();
-  }, []);
 
   if (!getFoodDetailsId) {
     console.log('nada');
@@ -88,3 +76,16 @@ const FoodDetails = () => {
   );
 };
 export default FoodDetails;
+
+FoodDetails.propTypes = {
+  getFoodDetailsId: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    brand: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    time: PropTypes.string.isRequired,
+    user: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
+FoodDetails.defaultProps = {
+  getFoodDetailsId: [],
+};

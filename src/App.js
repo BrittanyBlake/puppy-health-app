@@ -11,7 +11,6 @@ import Treats from './components/treats/Treats';
 import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
 import FoodList from './container/track/FoodList';
-import FoodDetails from './components/food/FoodDetails';
 import GeneralDetails from './components/general/GeneralDetails';
 import General from './components/general/General';
 import AddWalks from './components/walks/addWalks';
@@ -25,6 +24,7 @@ import Calendar from './components/calendar/Calendar';
 import AppointmentDetails from './components/appointments/AppointmentDetails';
 import Appointments from './components/appointments/Appointments';
 import AddAppointments from './components/appointments/AddAppointments';
+import FoodInfo from './container/details/FoodInfo';
 
 function App() {
   const currentUser = localStorage.getItem('token');
@@ -77,7 +77,7 @@ function App() {
         <Route exact path="/food" component={FoodList}>
           {currentUser ? <FoodList /> : <LoginForm />}
         </Route>
-        <Route exact path="/food/:foodDetailsIndex" component={FoodDetails} />
+        <Route exact path="/food/:foodDetailsIndex" component={FoodInfo} />
         <Route exact path="/addwalk" component={AddWalks}>
           {currentUser ? <AddWalks /> : <LoginForm />}
         </Route>
