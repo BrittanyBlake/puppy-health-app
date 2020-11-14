@@ -10,7 +10,7 @@ import WalkDetails from './components/walks/WalkDetails';
 import Treats from './components/treats/Treats';
 import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
-import FoodList from './container/food/FoodList';
+import FoodList from './container/track/FoodList';
 import FoodDetails from './components/food/FoodDetails';
 import GeneralDetails from './components/general/GeneralDetails';
 import General from './components/general/General';
