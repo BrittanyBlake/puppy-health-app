@@ -1,36 +1,20 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import PropTypes from 'prop-types';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import TrackCard from '../trackCard/trackCard';
 
-const Appointments = () => {
-  const dispatch = useDispatch();
-  const allAppointments = useSelector(state => state.appointments);
-  console.log('appt state', allAppointments);
-
-  useEffect(() => {
-    const getAppointment = () => {
-      console.log('hi');
-      dispatch(PuppyHealthApi.getAppointments());
-    };
-    getAppointment();
-  }, [dispatch]);
-
+const Appointments = ({ allAppointments }) => {
   if (!allAppointments) {
-    console.log('nada');
     return null;
   }
 
   const formatDate = datetime => new Date(datetime).toDateString();
 
   return (
-    console.log('appts', allAppointments),
     (
       <div>
-
         <Navbar />
         <div className="marginBottom">
           <h2 style={{ color: 'GrayText', fontFamily: 'Helvetica Neue' }}>
@@ -40,13 +24,13 @@ const Appointments = () => {
           </h2>
           {' '}
           {allAppointments.length > 0
-          && allAppointments.map(appt => (
-            <div key={appt.id}>
-              <Link to={`/appointments/${appt.id}`}>
-                <TrackCard date={formatDate(appt.date)} />
-              </Link>
-            </div>
-          ))}
+            && allAppointments.map(appt => (
+              <div key={appt.id}>
+                <Link to={`/appointments/${appt.id}`}>
+                  <TrackCard date={formatDate(appt.date)} />
+                </Link>
+              </div>
+            ))}
         </div>
 
         <BottomNav addLink="/newappointments" trackLink="/appointments" />
@@ -56,3 +40,13 @@ const Appointments = () => {
 };
 
 export default Appointments;
+
+Appointments.propTypes = {
+  allAppointments: PropTypes.shape({
+    length: PropTypes.number.isRequired,
+    map: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
+Appointments.defaultProps = {
+  allAppointments: {},
+};

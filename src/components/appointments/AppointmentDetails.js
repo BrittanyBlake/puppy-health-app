@@ -1,40 +1,26 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './AppointmentDetail.styles';
 
 import { ReactComponent as AppointmentImg } from '../../assets/images/appointment.svg';
 
-const AppointmentDetails = () => {
-  const { appointmentDetailsIndex } = useParams();
-  const dispatch = useDispatch();
-  const getAppointmentDetailsId = useSelector(state => state.appointments);
+const AppointmentDetails = ({ getAppointmentDetailsId }) => {
   const formatDate = datetime => new Date(datetime).toDateString();
-  console.log('details', getAppointmentDetailsId);
 
   const classes = useStyles();
 
-  useEffect(() => {
-    const appointmentDetailsId = () => {
-      dispatch(PuppyHealthApi.getAppointmentsId(appointmentDetailsIndex));
-    };
-    appointmentDetailsId();
-  }, []);
-
   if (!getAppointmentDetailsId) {
-    console.log('nada');
     return null;
   }
 
   return (
-    console.log('user:', getAppointmentDetailsId),
+
     (
       <div>
         <Navbar />
@@ -83,3 +69,15 @@ const AppointmentDetails = () => {
   );
 };
 export default AppointmentDetails;
+
+AppointmentDetails.propTypes = {
+  getAppointmentDetailsId: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    user: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+};
+AppointmentDetails.defaultProps = {
+  getAppointmentDetailsId: {},
+};
