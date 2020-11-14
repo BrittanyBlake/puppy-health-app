@@ -396,6 +396,7 @@ const PuppyHealthApi = (() => {
       appt_type: appointment.type,
       date: appointment.date,
       location: appointment.location,
+      user_id: appointment.user_id,
     };
     try {
       const data = await axios.post(

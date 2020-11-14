@@ -45,6 +45,11 @@ const TreatDetails = () => {
 
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#97E493' }}>
+              {' '}
+              {getTreatDetailsId.user ? getTreatDetailsId.user.name : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <Treats style={{ fill: '#97E493' }} height={200} width={200} />

@@ -46,6 +46,13 @@ const MedicationDetails = () => {
 
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#ED4631' }}>
+              {' '}
+              {getMedicationDetailsId.user
+                ? getMedicationDetailsId.user.name
+                : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <Medicine

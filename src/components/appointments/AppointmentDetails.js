@@ -36,7 +36,7 @@ const AppointmentDetails = () => {
   }
 
   return (
-    console.log('data:', getAppointmentDetailsId),
+    console.log('user:', getAppointmentDetailsId),
     (
       <div>
         <Navbar />
@@ -47,6 +47,13 @@ const AppointmentDetails = () => {
 
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#42B5E8' }}>
+              {' '}
+              {getAppointmentDetailsId.user
+                ? getAppointmentDetailsId.user.name
+                : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <AppointmentImg

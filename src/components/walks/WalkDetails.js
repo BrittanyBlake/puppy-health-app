@@ -45,10 +45,15 @@ const WalkDetails = () => {
         </h1>
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#97E493' }}>
+              {' '}
+              {getWalkDetailsId.user ? getWalkDetailsId.user.name : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <DogWalking
-                  style={{ fill: '#42B5E8' }}
+                  style={{ fill: '#97E493' }}
                   height={200}
                   width={200}
                 />

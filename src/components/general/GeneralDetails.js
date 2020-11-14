@@ -44,6 +44,13 @@ const GeneralDetails = () => {
         </h1>
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#ED4631' }}>
+              {' '}
+              {getGeneralDetailsId.user
+                ? getGeneralDetailsId.user.name
+                : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <HealthImg
