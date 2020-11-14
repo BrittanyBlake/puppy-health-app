@@ -1,24 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import PropTypes from 'prop-types';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import TrackCard from '../trackCard/trackCard';
 
-const Treats = () => {
-  const dispatch = useDispatch();
-  const allTreats = useSelector(state => state.treats);
-  console.log('treat state', allTreats);
-
-  useEffect(() => {
-    const getTreat = () => {
-      console.log('hi');
-      dispatch(PuppyHealthApi.getTreats());
-    };
-    getTreat();
-  }, [dispatch]);
-
+const Treats = ({ allTreats }) => {
   if (!allTreats) {
     console.log('nada');
     return null;
@@ -55,3 +42,13 @@ const Treats = () => {
 };
 
 export default Treats;
+
+Treats.propTypes = {
+  allTreats: PropTypes.shape({
+    length: PropTypes.number.isRequired,
+    map: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
+Treats.defaultProps = {
+  allTreats: {},
+};

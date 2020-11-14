@@ -83,9 +83,9 @@ FoodDetails.propTypes = {
     brand: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
     time: PropTypes.string.isRequired,
-    user: PropTypes.arrayOf(PropTypes.object).isRequired,
+    user: PropTypes.arrayOf(PropTypes.string).isRequired,
   }),
 };
 FoodDetails.defaultProps = {
-  getFoodDetailsId: [],
+  getFoodDetailsId: {},
 };

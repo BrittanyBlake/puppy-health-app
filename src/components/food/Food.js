@@ -50,5 +50,5 @@ Food.propTypes = {
   }),
 };
 Food.defaultProps = {
-  allFoods: [],
+  allFoods: {},
 };

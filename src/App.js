@@ -7,8 +7,6 @@ import LoginForm from './components/login/LoginForm';
 import Profile from './components/profile/Profile';
 import Walks from './components/walks/Walks';
 import WalkDetails from './components/walks/WalkDetails';
-import Treats from './components/treats/Treats';
-import TreatDetails from './components/treats/TreatDetails';
 import Medication from './components/medication/Medication';
 import FoodList from './container/track/FoodList';
 import GeneralDetails from './components/general/GeneralDetails';
@@ -25,6 +23,8 @@ import AppointmentDetails from './components/appointments/AppointmentDetails';
 import Appointments from './components/appointments/Appointments';
 import AddAppointments from './components/appointments/AddAppointments';
 import FoodInfo from './container/details/FoodInfo';
+import TreatsList from './container/track/TreatsList';
+import TreatsInfo from './container/details/TreatsInfo';
 
 function App() {
   const currentUser = localStorage.getItem('token');
@@ -39,9 +39,6 @@ function App() {
           {currentUser ? <Walks /> : <LoginForm />}
         </Route>
         <Route exact path="/walks/:walkDetailsIndex" component={WalkDetails} />
-        <Route exact path="/treats" component={Treats}>
-          {currentUser ? <Treats /> : <LoginForm />}
-        </Route>
         <Route exact path="/appointments" component={Appointments}>
           {currentUser ? <Appointments /> : <LoginForm />}
         </Route>
@@ -50,13 +47,13 @@ function App() {
           path="/appointments/:appointmentDetailsIndex"
           component={AppointmentDetails}
         />
-        <Route exact path="/treats" component={Treats}>
-          {currentUser ? <Treats /> : <LoginForm />}
+        <Route exact path="/treats" component={TreatsList}>
+          {currentUser ? <TreatsList /> : <LoginForm />}
         </Route>
         <Route
           exact
           path="/treats/:treatDetailsIndex"
-          component={TreatDetails}
+          component={TreatsInfo}
         />
         <Route exact path="/medication" component={Medication}>
           {currentUser ? <Medication /> : <LoginForm />}

@@ -1,28 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import Container from '@material-ui/core/Container';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PuppyHealthApi from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './TreatDetail.styles';
 import { ReactComponent as Treats } from '../../assets/images/treats.svg';
 
-const TreatDetails = () => {
+const TreatDetails = ({ getTreatDetailsId }) => {
   const classes = useStyles();
-  const { treatDetailsIndex } = useParams();
-  const dispatch = useDispatch();
-  const getTreatDetailsId = useSelector(state => state.treats);
   const formatDate = datetime => new Date(datetime).toDateString();
-
-  useEffect(() => {
-    const treatDetailsId = () => {
-      dispatch(PuppyHealthApi.getTreatsId(treatDetailsIndex));
-    };
-    treatDetailsId();
-  }, []);
 
   if (!getTreatDetailsId) {
     console.log('nada');
@@ -76,3 +64,15 @@ const TreatDetails = () => {
   );
 };
 export default TreatDetails;
+
+TreatDetails.propTypes = {
+  getTreatDetailsId: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    treat_type: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    user: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+};
+TreatDetails.defaultProps = {
+  getTreatDetailsId: {},
+};
