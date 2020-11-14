@@ -36,6 +36,8 @@ const FoodDetails = () => {
     return null;
   }
 
+  // console.log('username', getFoodDetailsId.user.name);
+
   return (
     console.log('data:', getFoodDetailsId),
     (
@@ -48,6 +50,11 @@ const FoodDetails = () => {
 
         <Container maxWidth="sm">
           <Paper className={classes.paper}>
+            <h2 className="dogname" style={{ color: '#42B5E8' }}>
+              {' '}
+              {getFoodDetailsId.user ? getFoodDetailsId.user.name : ''}
+              {' '}
+            </h2>
             <Grid container>
               <Grid container item xs={6}>
                 <FoodImg style={{ fill: '#42B5E8' }} height={200} width={200} />
