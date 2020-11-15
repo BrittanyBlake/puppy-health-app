@@ -1,4 +1,4 @@
-import foodReducer from '../../redux/reducers/foodReducer';
+import foodReducer from '../../redux/reducers/FoodReducer';
 import * as reducerAction from '../../redux/actions/index';
 
 describe('get foods', () => {
