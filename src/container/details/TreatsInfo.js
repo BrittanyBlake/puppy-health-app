@@ -17,7 +17,6 @@ const TreatsInfo = () => {
   }, []);
 
   if (!getTreatDetailsId) {
-    console.log('nada');
     return null;
   }
 
