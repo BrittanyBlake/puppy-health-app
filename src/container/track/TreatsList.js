@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Treats from '../../components/treats/Treats';
 
-import { getTreats } from '../../api/healthTracker';
+import getTreats from '../../api/treats/Treats';
 
 const TreatsList = () => {
   const dispatch = useDispatch();

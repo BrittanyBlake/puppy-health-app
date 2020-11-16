@@ -1,24 +1,41 @@
 import axios from 'axios';
 import * as reducerAction from '../redux/actions/index';
 
-// export const getMedicationsId = id => async dispatch => {
+// export const getTreats = () => async dispatch => {
 //   const token = localStorage.getItem('token');
 //   try {
 //     const data = await axios.get(
-//       `https://young-scrubland-44144.herokuapp.com/api/v1/medications/${id}`,
+//       'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
 //       {
 //         headers: {
 //           Authorization: `Bearer ${token}`,
 //         },
 //       },
 //     );
-//     dispatch(reducerAction.getMedicationsId(data.data));
+//     dispatch(reducerAction.getTreats(data.data));
 //   } catch (error) {
 //     dispatch(reducerAction.formErrors(error.response.data.message));
 //   }
 // };
 
-// export const addMedications = medication => async dispatch => {
+// export const getTreatsId = id => async dispatch => {
+//   const token = localStorage.getItem('token');
+//   try {
+//     const data = await axios.get(
+//       `https://young-scrubland-44144.herokuapp.com/api/v1/treats/${id}`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       },
+//     );
+//     dispatch(reducerAction.getTreatsId(data.data));
+//   } catch (error) {
+//     dispatch(reducerAction.formErrors(error.response.data.message));
+//   }
+// };
+
+// export const addTreats = treat => async dispatch => {
 //   const token = localStorage.getItem('token');
 //   const config = {
 //     headers: {
@@ -26,85 +43,23 @@ import * as reducerAction from '../redux/actions/index';
 //     },
 //   };
 
-//   const medications = {
-//     dosage: medication.dosage,
-//     name: medication.name,
-//     date: medication.date,
-//     time: medication.time,
-//     use: medication.use,
-//     user_id: medication.user_id,
+//   const treats = {
+//     amount: treat.amount,
+//     treat_type: treat.treat_type,
+//     date: treat.date,
+//     user_id: treat.user_id,
 //   };
 //   try {
 //     const data = await axios.post(
-//       'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
-//       medications,
+//       'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
+//       treats,
 //       config,
 //     );
-//     dispatch(reducerAction.addMedications(data.medication));
+//     dispatch(reducerAction.addTreats(data.treat));
 //   } catch (error) {
 //     dispatch(reducerAction.formErrors(error.response.data.message));
 //   }
 // };
-
-export const getTreats = () => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get(
-      'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    dispatch(reducerAction.getTreats(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
-
-export const getTreatsId = id => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get(
-      `https://young-scrubland-44144.herokuapp.com/api/v1/treats/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    dispatch(reducerAction.getTreatsId(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
-
-export const addTreats = treat => async dispatch => {
-  const token = localStorage.getItem('token');
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const treats = {
-    amount: treat.amount,
-    treat_type: treat.treat_type,
-    date: treat.date,
-    user_id: treat.user_id,
-  };
-  try {
-    const data = await axios.post(
-      'https://young-scrubland-44144.herokuapp.com/api/v1/treats',
-      treats,
-      config,
-    );
-    dispatch(reducerAction.addTreats(data.treat));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
 
 export const getWalks = () => async dispatch => {
   const token = localStorage.getItem('token');
