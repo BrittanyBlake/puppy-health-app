@@ -64,6 +64,10 @@ const SignUpForm = ({ props }) => {
           <Typography component="h1" variant="h5" style={{ color: '#ffffff' }}>
             New here? Make an account to get started!
           </Typography>
+          <h1 className={classes.error}>
+            {error.errors}
+            {' '}
+          </h1>
 
           <form className={classes.form} onSubmit={handleSubmit}>
             <TextField

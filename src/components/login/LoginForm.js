@@ -19,6 +19,7 @@ const LoginForm = ({ props }) => {
   const classes = useStyles(props);
   const dispatch = useDispatch();
   const error = useSelector(state => state.errors);
+  console.log(error);
 
   const initialFormState = {
     email: '',
@@ -66,6 +67,10 @@ const LoginForm = ({ props }) => {
           <Typography component="h1" variant="h5" style={{ color: '#ffffff' }}>
             Welcome! Log In to get started
           </Typography>
+          <h1 className={classes.error}>
+            {error.errors}
+            {' '}
+          </h1>
 
           <form className={classes.form} onSubmit={handleSubmit}>
             <TextField
