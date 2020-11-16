@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Copyright from '../copyright/Copyright';
-import { loginUser } from '../../api/healthTracker';
+import loginUser from '../../api/login';
 import useStyles from './LoginForm.styles';
 
 const LoginForm = ({ props }) => {

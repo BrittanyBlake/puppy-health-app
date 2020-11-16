@@ -1,16 +1,14 @@
 import axios from 'axios';
 import * as reducerAction from '../redux/actions/index';
 
-const signUpUser = user => async dispatch => {
+const loginUser = user => async dispatch => {
   try {
     const data = await axios.post(
-      'https://young-scrubland-44144.herokuapp.com/signup',
+      'https://young-scrubland-44144.herokuapp.com/auth/login',
       {
-        users: {
+        user: {
           email: user.email,
-          name: user.name,
           password: user.password,
-          password_confirmation: user.password_confirmation,
         },
       },
     );
@@ -22,4 +20,4 @@ const signUpUser = user => async dispatch => {
   }
 };
 
-export default signUpUser;
+export default loginUser;
