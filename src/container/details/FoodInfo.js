@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import { getFoodsId } from '../../api/healthTracker';
 import FoodDetails from '../../components/food/FoodDetails';
 
 const FoodInfo = () => {
@@ -11,7 +11,7 @@ const FoodInfo = () => {
 
   useEffect(() => {
     const foodDetailsId = () => {
-      dispatch(PuppyHealthApi.getFoodsId(foodDetailsIndex));
+      dispatch(getFoodsId(foodDetailsIndex));
     };
     foodDetailsId();
   }, []);

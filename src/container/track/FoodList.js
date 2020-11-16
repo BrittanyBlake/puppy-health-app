@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PuppyHealthApi from '../../api/healthTracker';
+import { getFoods } from '../../api/healthTracker';
 import Food from '../../components/food/Food';
 
 const FoodList = () => {
@@ -9,7 +9,7 @@ const FoodList = () => {
 
   useEffect(() => {
     const getFood = () => {
-      dispatch(PuppyHealthApi.getFoods());
+      dispatch(getFoods());
     };
     getFood();
   }, [dispatch]);

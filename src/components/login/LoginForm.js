@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Copyright from '../copyright/Copyright';
-import PuppyHealthApi from '../../api/healthTracker';
+import { loginUser } from '../../api/healthTracker';
 import useStyles from './LoginForm.styles';
 
 const LoginForm = ({ props }) => {
@@ -35,7 +35,7 @@ const LoginForm = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(PuppyHealthApi.loginUser(values));
+    dispatch(loginUser(values));
     if (error) {
       return error;
     }

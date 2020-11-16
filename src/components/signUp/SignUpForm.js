@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Copyright from '../copyright/Copyright';
 import useStyles from './SignUpForm.styles';
-import PuppyHealthApi from '../../api/healthTracker';
+import signUpUser from '../../api/signup';
 
 const SignUpForm = ({ props }) => {
   const classes = useStyles(props);
@@ -36,7 +36,7 @@ const SignUpForm = ({ props }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(PuppyHealthApi.signUpUser(values));
+    dispatch(signUpUser(values));
     if (error) {
       return error;
     }

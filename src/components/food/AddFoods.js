@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import PuppyHealthApi from '../../api/healthTracker';
+import { addFoods } from '../../api/healthTracker';
 import Navbar from '../navbar/Navbar';
 import BottomNav from '../bottomNav/BottomNav';
 import useStyles from './addFoods.styles';
@@ -35,7 +35,7 @@ const AddFoods = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(PuppyHealthApi.addFoods(values));
+    dispatch(addFoods(values));
     setSubmitted(true);
   };
 

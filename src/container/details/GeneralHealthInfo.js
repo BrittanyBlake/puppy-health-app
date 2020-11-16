@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import PuppyHealthApi from '../../api/healthTracker';
+import { getGeneralHealthsId } from '../../api/healthTracker';
 import GeneralDetails from '../../components/general/GeneralDetails';
 
 const GeneralHealthInfo = () => {

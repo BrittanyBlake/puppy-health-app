@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PuppyHealthApi from '../../api/healthTracker';
+import { getWalks } from '../../api/healthTracker';
 import Walks from '../../components/walks/Walks';
 
 const WalksList = () => {
