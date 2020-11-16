@@ -19,7 +19,6 @@ const LoginForm = ({ props }) => {
   const classes = useStyles(props);
   const dispatch = useDispatch();
   const error = useSelector(state => state.errors);
-  console.log(error);
 
   const initialFormState = {
     email: '',
