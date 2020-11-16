@@ -10,7 +10,7 @@ const TreatsList = () => {
 
   useEffect(() => {
     const getTreat = () => {
-      dispatch(PuppyHealthApi.getTreats());
+      dispatch(getTreats());
     };
     getTreat();
   }, [dispatch]);

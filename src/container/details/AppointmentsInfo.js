@@ -11,7 +11,7 @@ const AppointmentsInfo = () => {
 
   useEffect(() => {
     const appointmentDetailsId = () => {
-      dispatch(PuppyHealthApi.getAppointmentsId(appointmentDetailsIndex));
+      dispatch(getAppointmentsId(appointmentDetailsIndex));
     };
     appointmentDetailsId();
   }, []);

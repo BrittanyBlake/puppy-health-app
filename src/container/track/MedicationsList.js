@@ -9,7 +9,7 @@ const MedicationList = () => {
 
   useEffect(() => {
     const getMedication = () => {
-      dispatch(PuppyHealthApi.getMedications());
+      dispatch(getMedications());
     };
     getMedication();
   }, [dispatch]);

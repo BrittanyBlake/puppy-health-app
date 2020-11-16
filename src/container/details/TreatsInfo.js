@@ -11,7 +11,7 @@ const TreatsInfo = () => {
 
   useEffect(() => {
     const treatDetailsId = () => {
-      dispatch(PuppyHealthApi.getTreatsId(treatDetailsIndex));
+      dispatch(getTreatsId(treatDetailsIndex));
     };
     treatDetailsId();
   }, []);

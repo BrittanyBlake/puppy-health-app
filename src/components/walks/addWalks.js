@@ -35,7 +35,7 @@ const AddWalks = ({ props }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(PuppyHealthApi.addWalks(values));
+    dispatch(addWalks(values));
     setSubmitted(true);
   };
 

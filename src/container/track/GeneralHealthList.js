@@ -9,7 +9,7 @@ const GeneralHealthList = () => {
 
   useEffect(() => {
     const getGeneralHealth = () => {
-      dispatch(PuppyHealthApi.getGeneralHealths());
+      dispatch(getGeneralHealths());
     };
     getGeneralHealth();
   }, [dispatch]);

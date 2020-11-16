@@ -9,7 +9,7 @@ const WalksList = () => {
 
   useEffect(() => {
     const getWalk = () => {
-      dispatch(PuppyHealthApi.getWalks());
+      dispatch(getWalks());
     };
     getWalk();
   }, [dispatch]);

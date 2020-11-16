@@ -11,7 +11,7 @@ const Walksinfo = () => {
 
   useEffect(() => {
     const walkDetailsId = () => {
-      dispatch(PuppyHealthApi.getWalksId(walkDetailsIndex));
+      dispatch(getWalksId(walkDetailsIndex));
     };
     walkDetailsId();
   }, []);

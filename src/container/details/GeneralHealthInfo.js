@@ -11,7 +11,7 @@ const GeneralHealthInfo = () => {
 
   useEffect(() => {
     const generalDetailsId = () => {
-      dispatch(PuppyHealthApi.getGeneralHealthsId(generalDetailsIndex));
+      dispatch(getGeneralHealthsId(generalDetailsIndex));
     };
     generalDetailsId();
   }, []);

@@ -9,7 +9,7 @@ const AppointmentsList = () => {
 
   useEffect(() => {
     const getAppointment = () => {
-      dispatch(PuppyHealthApi.getAppointments());
+      dispatch(getAppointments());
     };
     getAppointment();
   }, [dispatch]);
