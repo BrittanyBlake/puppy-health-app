@@ -1,67 +1,50 @@
 import axios from 'axios';
 import * as reducerAction from '../redux/actions/index';
 
-export const getMedications = () => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get(
-      'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    dispatch(reducerAction.getMedications(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
+// export const getMedicationsId = id => async dispatch => {
+//   const token = localStorage.getItem('token');
+//   try {
+//     const data = await axios.get(
+//       `https://young-scrubland-44144.herokuapp.com/api/v1/medications/${id}`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       },
+//     );
+//     dispatch(reducerAction.getMedicationsId(data.data));
+//   } catch (error) {
+//     dispatch(reducerAction.formErrors(error.response.data.message));
+//   }
+// };
 
-export const getMedicationsId = id => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get(
-      `https://young-scrubland-44144.herokuapp.com/api/v1/medications/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    dispatch(reducerAction.getMedicationsId(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
+// export const addMedications = medication => async dispatch => {
+//   const token = localStorage.getItem('token');
+//   const config = {
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   };
 
-export const addMedications = medication => async dispatch => {
-  const token = localStorage.getItem('token');
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const medications = {
-    dosage: medication.dosage,
-    name: medication.name,
-    date: medication.date,
-    time: medication.time,
-    use: medication.use,
-    user_id: medication.user_id,
-  };
-  try {
-    const data = await axios.post(
-      'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
-      medications,
-      config,
-    );
-    dispatch(reducerAction.addMedications(data.medication));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
+//   const medications = {
+//     dosage: medication.dosage,
+//     name: medication.name,
+//     date: medication.date,
+//     time: medication.time,
+//     use: medication.use,
+//     user_id: medication.user_id,
+//   };
+//   try {
+//     const data = await axios.post(
+//       'https://young-scrubland-44144.herokuapp.com/api/v1/medications',
+//       medications,
+//       config,
+//     );
+//     dispatch(reducerAction.addMedications(data.medication));
+//   } catch (error) {
+//     dispatch(reducerAction.formErrors(error.response.data.message));
+//   }
+// };
 
 export const getTreats = () => async dispatch => {
   const token = localStorage.getItem('token');
