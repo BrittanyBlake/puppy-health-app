@@ -1,81 +1,22 @@
 import axios from 'axios';
 import * as reducerAction from '../redux/actions/index';
 
-// export const loginUser = user => async dispatch => {
+// export const getFoodsId = id => async dispatch => {
+//   const token = localStorage.getItem('token');
 //   try {
-//     const data = await axios.post('https://young-scrubland-44144.herokuapp.com/auth/login', {
-//       user: {
-//         email: user.email,
-//         password: user.password,
+//     const data = await axios.get(
+//       `https://young-scrubland-44144.herokuapp.com/api/v1/foods/${id}`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
 //       },
-//     });
-//     localStorage.setItem('token', data.data.auth_token);
-//     dispatch(reducerAction.loginUser(data.user));
-//     window.location = '/';
+//     );
+//     dispatch(reducerAction.getFoodsId(data.data));
 //   } catch (error) {
 //     dispatch(reducerAction.formErrors(error.response.data.message));
 //   }
 // };
-
-export const getFoods = () => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get('https://young-scrubland-44144.herokuapp.com/api/v1/foods',
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    dispatch(reducerAction.getFoods(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
-
-export const addFoods = food => async dispatch => {
-  const token = localStorage.getItem('token');
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const foods = {
-    brand: food.brand,
-    amount: food.amount,
-    date: food.date,
-    time: food.time,
-    user_id: food.user_id,
-  };
-  try {
-    const data = await axios.post(
-      'https://young-scrubland-44144.herokuapp.com/api/v1/foods',
-      foods,
-      config,
-    );
-    dispatch(reducerAction.addFoods(data.food));
-    window.location = '/food';
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
-
-export const getFoodsId = id => async dispatch => {
-  const token = localStorage.getItem('token');
-  try {
-    const data = await axios.get(
-      `https://young-scrubland-44144.herokuapp.com/api/v1/foods/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-    dispatch(reducerAction.getFoodsId(data.data));
-  } catch (error) {
-    dispatch(reducerAction.formErrors(error.response.data.message));
-  }
-};
 
 export const getGeneralHealths = () => async dispatch => {
   const token = localStorage.getItem('token');

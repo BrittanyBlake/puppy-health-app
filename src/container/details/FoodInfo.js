@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getFoodsId } from '../../api/healthTracker';
+import getFoodsId from '../../api/food/getFoodId';
 import FoodDetails from '../../components/food/FoodDetails';
 
 const FoodInfo = () => {
